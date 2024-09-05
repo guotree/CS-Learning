@@ -1,0 +1,44 @@
+body
+{
+    counter-reset: h2counter;
+}
+
+h2
+{
+    counter-increment: h2counter;
+}
+
+
+h2::before
+{
+    content: counter(h2counter) ". ";
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+th, td
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.recommend
+{
+    font-weight: bold;
+}
+
+.recommend::before
+{
+    content: "★";
+    color: gold;
+    font-size: 100%;
+}
+
+

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>CS Learning</title>
+        <script>
+            function isSatisfied(event) {
+
+                // Get the element which triggered the event
+                let button = event.target;
+
+                // Check if the element's inner HTML matches expected answer
+                if (button.innerHTML == 'YES') {
+                    alert('Thanks');
+                }
+                else if (button.innerHTML == 'NO') {
+                    alert('Sorry for that, I will improve it!');
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container-md">
+            <h1>Computer Science Self Learning Resources</h1>
+            <p>This a computer science self learning guides which was inspired by <a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a></p>
+            <p>I've presented the contents of this guide in a more efficient way</p>
+            <p><q>There are 2 types of software engineer: those who understand computer science well enough to do challenging, innovative work, and those who just get by because they’re familiar with a few high level tools. Both call themselves software engineers, and both tend to earn similar salaries in their early careers. But Type 1 engineers progress toward more fulfilling and well-remunerated work over time, whether that’s valuable commercial work or breakthrough open-source projects, technical leadership or high-quality individual contributions.</q></p>
+            <p>Your self learning should include 9 parts:</p>
+            <ol>
+                <li><a href="#programming">Programming</a></li>
+                <li><a href="#architecture">Computer Architecture</a></li>
+                <li><a href="#algorithms">Algorithms and Data Structures</a></li>
+                <li><a href="#math">Math for CS</a></li>
+                <li><a href="#operating-systems">Operating Systems</a></li>
+                <li><a href="#networking">Computer Networking</a></li>
+                <li><a href="#databases">Databases</a></li>
+                <li><a href="#languages">Languages and Compilers</a></li>
+                <li><a href="#distributed-systems">Distributed Systems</a></li>
+            </ol>
+            <br>
+            <p><strong>Before you begin your self-learning journey, I recommend an introductory course: <a href="https://www.bilibili.com/video/BV1EW411u7th/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Crash Course Computer Science</a>
+                by <a href="https://about.me/carrieannephilbin">Carrie Anne</a>. It must be a good start!</strong>
+            </p>
+            <h2 id="programming">Programming</h2>
+            <p>This part is an introduction to computer programming, and here are books and courses I recommend to you: </p>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td rowspan="2" class="recommend"><a href="https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html">Structure and Interpretation of Computer Programs</a></td>
+                        <td class="recommend">Brian Harvey's Berkeley CS 61A: <a href="https://www.bilibili.com/video/BV12t411p7jA/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLhMnuBfGeCDNgVzLPxF9o5UNKG1b-LFY9&si=iYhEyefbyp3uxKZ1">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/pages/syllabus/">MIT 6.001</a>: <a href="https://www.bilibili.com/video/BV19U4y187U5/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Harold Abelson's in 1986</a> or <a href="https://www.bilibili.com/video/BV1TX4y157hX/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Eric Grimson's in 2004</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://htdp.org/">How to design programs</a></td>
+                        <td>/</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.composingprograms.com/">Composing Programs</a></td>
+                        <td><a href="https://cs61a.org/">John DeNero's Berkeley CS 61A</a>: <a href="https://www.bilibili.com/video/BV1sy411z7nA/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://cs61a.org/">Official</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>These are open classes for other specific programming languages: </p>
+            <ul>
+                <li>General
+                    <ol>
+                        <li><a href="https://missing.csail.mit.edu/">MIT's The Missing Semester of Your CS Education</a>: <a href="https://www.bilibili.com/video/BV1b2421M7v3/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">videos</a></li>
+                        <li><a href="https://cs50.harvard.edu/x/2024/">Harvard's CS50x</a>: <a href="https://www.bilibili.com/video/BV16k4y1X7KZ/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">videos</a></li>
+                    </ol>
+                </li>
+                <li>Python
+                    <ol>
+                        <li><a href="https://cs50.harvard.edu/python/2022/">Harvard's CS50 Python</a>: <a href="https://www.bilibili.com/video/BV1NK411x7x1/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">videos</a></li>
+                    </ol>
+                </li>
+                <li>C
+                    <ol>
+                        <li><a href="https://www.cc4e.com/">C Programming for Everybody</a> by Dr. Chuck</li>
+                    </ol>
+                </li>
+            </ul>
+            <h2 id="architecture">Computer Architecture</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td class="recommend">Computer Systems: A Programmer's Perspective</td>
+                        <td class="recommend"><a href="https://cs61c.org/">Berkeley CS61C</a>:
+                            <br>Fall 2020: <a href="https://www.bilibili.com/video/BV17b42177VG/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://www.youtube.com/playlist?list=PL0j-r-omG7i0-mnsxN5T4UcVS1Di0isqf">Youtube</a>
+                            <br>Spring 2015: <a href="https://www.bilibili.com/video/BV1it411p7U5/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLhMnuBfGeCDM8pXLpqib90mDFJI-e1lpk&si=2QjnzNFUcVgq5aj3">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.nand2tetris.org/">The Elements of Computing Systems</a>; Computer Organization and Design</td>
+                        <td><a href="www.nand2tetris.org/">Nand2Tetris</a>: <a href="https://www.bilibili.com/video/BV1KJ411s7QJ/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; Coursera <a href="https://www.coursera.org/learn/build-a-computer">1</a>, <a href="https://www.coursera.org/learn/nand2tetris2">2</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id="algorithms">Algorithms and Data Structures</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td class="recommend"><a href="https://www3.cs.stonybrook.edu/~skiena/373/videos/">The Algorithm Design Manual</a></td>
+                        <td class="recommend"><a href="https://www3.cs.stonybrook.edu/~skiena/373/">Steven Skiena's CSE 373</a>: <a href="https://www.bilibili.com/video/BV1sa411w7qw/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://www.youtube.com/playlist?list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://algorithmsilluminated.org/">Algorithms Illuminated</a></td>
+                        <td><a href="http://timroughgarden.org/videos.html">Tim Roughgarden’s course</a>: <a href="https://www.bilibili.com/video/BV1Rx4y1U7sZ/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://www.coursera.org/specializations/algorithms">Coursera</a></td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Algorithms</td>
+                        <td><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/">MIT 6.006</a>: <a href="https://www.bilibili.com/video/BV1mw4m1k7tN/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://algs4.cs.princeton.edu/home/">Algorithms</a></td>
+                        <td><a href="https://algs4.cs.princeton.edu/home/">Priceton's Algorithms</a>: <a href="https://www.bilibili.com/video/BV1WA4m1N7v2/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLRdD1c6QbAqJn0606RlOR6T3yUqFWKwmX&si=TnCfaj9hJXQ9391x">Youtube</a>; Coursera <a href="https://www.coursera.org/learn/algorithms-part1">1</a>, <a href="https://www.coursera.org/learn/algorithms-part2">2</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id="math">Math for CS</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td>Discrete Mathematics</td>
+                        <td><a href="https://cims.nyu.edu/~regev/teaching/discrete_math_fall_2005/dmbook.pdf">lecture notes by László Lovász</a>; <a href="https://www.bing.com/ck/a?!&&p=935b029b30c1c6e9JmltdHM9MTcyNTQ5NDQwMCZpZ3VpZD0zYzFiZjVkZS0xZWNhLTY3NTYtM2VkNC1lMTM4MWY3MDY2MDAmaW5zaWQ9NTIxMQ&ptn=3&ver=2&hsh=3&fclid=3c1bf5de-1eca-6756-3ed4-e1381f706600&u=a1aHR0cHM6Ly9vY3cubWl0LmVkdS9jb3Vyc2VzLzYtMDQyai1tYXRoZW1hdGljcy1mb3ItY29tcHV0ZXItc2NpZW5jZS1zcHJpbmctMjAxNS9taXQ2XzA0MmpzMTVfdGV4dGJvb2sucGRm&ntb=1">Mathematics for Computer Science</a></td>
+                        <td><a href="https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/">MIT 6.042J</a>: <a href="https://www.bilibili.com/video/BV1cT421r7Ep/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href=" http://ocw.mit.edu/6-042JF10">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td>Linear Algebra</td>
+                        <td>Introduction to Linear Algebra</td>
+                        <td><a href="https://ejonokuchi.com/essence.html">Essence of linear algebra</a>: <a href="https://www.bilibili.com/video/BV1vb411T73y/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Youtube</a><br>
+                            <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/">MIT 18.06SC</a>: <a href="https://www.bilibili.com/video/BV1Vm421E7Zy/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://www.youtube.com/playlist?list=PL221E2BBF13BECF6C">Youtube</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id="operating-systems">Operating Systems</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Step</th>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td rowspan=2>Step 1: Learning the basic</td>
+                        <td class="recommend"><a href="https://pages.cs.wisc.edu/~remzi/OSTEP/">Operating Systems: Three Easy Pieces</a></td>
+                        <td class="recommend"><a href="https://pdos.csail.mit.edu/6.828/2016/index.html">MIT 6.S081</a>: <a href="https://www.bilibili.com/video/BV1rS4y1n7y1/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://pdos.csail.mit.edu/6.828/2021/schedule.html">MIT</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://ospp.cs.washington.edu/">Operating Systems: Principles and Practice</a></td>
+                        <td><a href="https://cs162.org/">UCB CS162</a>: <a href="https://www.bilibili.com/video/BV1ab4y1b7BU/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLF2K2xZjNEf97A_uBCwEl61sdxWVP7VWC&si=vC0pt9EXyghu8wyp">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td rowspan=4>Step 2: explore the design decisions of specific operating systems</td>
+                        <td>Lion's commentary on Unix</td>
+                        <td rowspan=4></td>
+                    </tr>
+                    <tr>
+                        <td>The Design and Implementation of the FreeBSD Operating System</td>
+                    </tr>
+                    <tr>
+                        <td>Mac OS X Internals</td>
+                    </tr>
+                    <tr>
+                        <td>Linux Kernel Development</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><q>A great way to consolidate your understanding of operating systems is to read the code of a small kernel and add features. One choice is <a href="https://pdos.csail.mit.edu/6.828/2016/xv6.html">xv6</a>,
+                a port of Unix V6 to ANSI C and x86, maintained for a course at MIT. OSTEP has an appendix of potential <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/lab-projects-xv6.pdf">xv6 labs</a> full of great ideas for potential projects.</q></p>
+            <h2 id="networking">Computer Networking</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td class="recommend" rowspan=2><a href="https://gaia.cs.umass.edu/kurose_ross/index.php">Computer Networking: A Top-Down Approach</a></td>
+                        <td class="recommend"><a href="https://cs144.github.io/">Stanford CS144</a>: <a href="https://www.bilibili.com/video/BV137411Z7LR/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLoCMsyE1cvdWKsLVyf6cPwCLDIZnOj0NS&si=clo9gtRt94-SCqxU">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://gaia.cs.umass.edu/kurose_ross/index.php">Jim Kurose's lecture</a>: <a href="https://www.bilibili.com/video/BV1mb4y1d7K7/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://gaia.cs.umass.edu/kurose_ross/lectures.php">Official</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id="databases">Databases</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td class="recommend"><a href="http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf">Architecture of a Database System</a></td>
+                        <td class="recommend" rowspan=3><a href="https://cs186berkeley.net/">Berkeley CS186</a>: <a href="https://www.bilibili.com/video/BV1YxWMehEGu/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLYp4IGUhNFmw8USiYMJvCUjZe79fvyYge&si=70AHR4mM6QVL69hl">Youtube</a></td>
+                    </tr>
+                    <tr>
+                        <td>Database Management Systems</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Processing: Concepts and Techniques</td>
+                    </tr>
+                    <tr>
+                        <td class="recommend"><a href="http://www.redbook.io/">Readings in Database Systems</a></td>
+                    </tr>
+                    <tr>
+                        <td>Data and Reality: A Timeless Perspective on Perceiving and Managing Information in Our Imprecise World</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id="languages">Languages and Compilers</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td class="recommend"><a href="https://craftinginterpreters.com/">Crafting Interpreters</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://suif.stanford.edu/dragonbook/">Compilers: Principles, Techniques & Tools</a></td>
+                        <td class="recommend"><a href="http://web.stanford.edu/class/cs143/">Stanford CS143</a>: <a href="https://www.bilibili.com/video/BV1NE411376V/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLTsf9UeqkRebOYdw4uqSN0ugRShSmHrzH&si=r4T2elSHjz6i1Xsy">Youtube</a>; <a href="https://www.edx.org/learn/computer-science/stanford-university-compilers">edX</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id="distributed-systems">Distributed Systems</h2>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Book</th>
+                        <th>Videos</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td class="recommend">Designing Data-Intensive Applications</td>
+                        <td class="recommend" rowspan=2><a href="http://nil.csail.mit.edu/6.824/2020/schedule.html">MIT 6.824</a>: <a href="https://www.bilibili.com/video/BV1R7411t71W/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a">Bilibili</a>; <a href="https://youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB&si=-SJPz5gKsgR9H0Ux">Youtube</a>; <a href="https://pdos.csail.mit.edu/6.824/schedule.html">Official</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.distributed-systems.net/">Distributed Systems, 4th</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan=3>
+                            Paper List: <a href="http://dsrg.pdos.csail.mit.edu/papers/">here</a>; Paper We Loved: <a href="http://paperswelove.org/">here</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <footer>
+                <div>Are you satisfied with this website?</div>
+                <div>
+                    <button type="button" class="btn btn-outline-success" onclick="isSatisfied(event)">YES</button>
+                    <button type="button" class="btn btn-outline-danger"  onclick="isSatisfied(event)">NO</button>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
