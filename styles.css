@@ -41,4 +41,14 @@ th, td
     font-size: 100%;
 }
 
+.finish
+{
+    font-weight: bold;
+    color: green;
+}
 
+.finish::after
+{
+    content: "✅";
+    font-size: 100%;
+}
