@@ -36,8 +36,7 @@ th, td
 
 .recommend::before
 {
-    content: "★";
-    color: gold;
+    content: "⭐";
     font-size: 100%;
 }
 
