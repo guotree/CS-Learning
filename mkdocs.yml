@@ -9,7 +9,7 @@ repo_name: CS-Learning
 nav:
   - Introduction: 
     - "Introduction": "index.md"
-    - "Crash Course Notes": "CrashCourseCS.md"
+    - "Crash Course Notes": "notes/CrashCourseCS.md"
   - Programming:
     - "Summary": "programming/summary.md"
   - Computer Architecture:
