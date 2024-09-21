@@ -5,6 +5,16 @@
         <h1>Computer Science Self Learning Guideline</h1>
         <p>This computer science self-learning guide draws inspiration from <a href="https://teachyourselfcs.com/" target="_blank">"Teach Yourself Computer Science"</a> and <a href="https://csdiy.wiki/" target="_blank">"csdiy.wiki"</a> presenting the content in a more streamlined and efficient manner.</p>
 
+        <p>
+            Meanwhile, the following guidelines can also serve as your reference.
+        </p>
+        <ul>
+            <li><a href="https://www.reddit.com/r/learnprogramming/wiki/faq/" target="_blank" title="This is a Reddit community, and the FAQ introduces the basic path for learning programming. It also mentions some guidances.">r/learningprogramming</a></li>
+            <li><a href="https://matt.might.net/articles/what-cs-majors-should-know/" target="_blank" title="It focuses on various fields from a high-level perspective of computer science.">might.net</a></li>
+            <li><a href="https://web.archive.org/web/20230614002105/https://functionalcs.github.io/curriculum/#Introduction" target="_blank" title="It's a computer science learning path from a mathematical perspective.">A Self-Learning, Modern Computer Science Curriculum</a></li>
+            <li><a href="https://cs.ossu.dev/" target="_blank" title="It's a self-study path in computer science mainly based on MOOCs: Coursera, edX. But its contents are relatively basic, not recommended.">Open Source Society University</a></li>
+        </ul>
+
         <blockquote cite="https://teachyourselfcs.com/">
             There are 2 types of software engineer: those who understand computer science well enough to do challenging, 
             innovative work, and those who just get by because they’re familiar with a few high level tools. 
@@ -16,17 +26,17 @@
 
         <p>Your self-learning journey should encompass 11 essential areas:</p>
         <ol>
-            <li><a href="programming/table/">Programming</a></li>
-            <li><a href="#architecture">Computer Architecture</a></li>
-            <li><a href="#algorithms">Algorithms and Data Structures</a></li>
-            <li><a href="#math">Math for CS</a></li>
-            <li><a href="#operating-systems">Operating Systems</a></li>
-            <li><a href="#networking">Computer Networking</a></li>
-            <li><a href="#databases">Databases</a></li>
-            <li><a href="#languages">Languages and Compilers</a></li>
-            <li><a href="#distributed-systems">Distributed Systems</a></li>
-            <li><a href="#ai">Artificial Intelligence</a></li>
-            <li><a href="#others">Others</a></li>
+            <li><a href="programming/summary/">Programming</a></li>
+            <li><a href="architecture/summary/">Computer Architecture</a></li>
+            <li><a href="algorithms/summary/">Algorithms and Data Structures</a></li>
+            <li><a href="math/summary/">Math for CS</a></li>
+            <li><a href="operating-systems/summary/">Operating Systems</a></li>
+            <li><a href="networking/summary/">Computer Networking</a></li>
+            <li><a href="databases/summary/">Databases</a></li>
+            <li><a href="languages/summary/">Languages and Compilers</a></li>
+            <li><a href="distributed-systems/summary/">Distributed Systems</a></li>
+            <li><a href="ai/summary/">Artificial Intelligence</a></li>
+            <li><a href="others/summary/">Others</a></li>
         </ol>
         <p>
             Before embarking on your self-learning adventure, we recommend starting with an introductory course: 
