@@ -75,9 +75,12 @@ edit_uri: edit/main/docs
 copyright: © 2024 GUOTREE Copyright
 extra:
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/chirui-guo-3ab4a8101
+      name: LinkedIn
     - icon: fontawesome/brands/github
-      link: https://github.com/guotree/CS-Learning
-      name: GitHub | CS-Learning
+      link: https://github.com/guotree
+      name: GitHub
 
 plugins:
   - search:
