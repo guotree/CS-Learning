@@ -7,11 +7,10 @@ repo_url: https://github.com/guotree/CS-Learning
 repo_name: CS-Learning
 
 nav:
-  - Introduction: 
-    - "Introduction": "index.md"
-    - "Crash Course Notes": "notes/CrashCourseCS.md"
+  - Introduction: "index.md"
   - Programming:
     - "Summary": "programming/summary.md"
+    - "Crash Course Notes": "notes/CrashCourseCS.md"
   - Computer Architecture:
     - "Summary": "architecture/summary.md"
   - Algorithms and Data Structures:
