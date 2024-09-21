@@ -1,17 +1,10 @@
 body
 {
-    counter-reset: h2counter;
+    font-family:Georgia;
 }
-
-h2
+h1
 {
-    counter-increment: h2counter;
-}
-
-
-h2::before
-{
-    content: counter(h2counter) ". ";
+    font-weight: bolder;
 }
 
 a
@@ -23,10 +16,21 @@ a:hover {
     text-decoration: underline;
 }
 
-th, td
+table
+{
+    width:100%;
+}
+
+th
+{
+    font-weight: bold;
+}
+
+td, th
 {
     text-align: center;
     vertical-align: middle;
+    border-bottom: 1px solid #ddd;
 }
 
 .recommend
