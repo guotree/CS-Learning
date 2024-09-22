@@ -43,9 +43,9 @@ nav:
     #   - "notes/distributed-systems/templates.md"
     - Artificial Intelligence:
       - Harvard Data Science:
-        - "docs/notes/ai/Harvard-Data-Science/README.md"
-        - "docs/notes/ai/Harvard-Data-Science/01-R_Basics.md"
-        - "docs/notes/ai/Harvard-Data-Science/02-Visualization.md"
+        - "notes/ai/Harvard-Data-Science/README.md"
+        - "notes/ai/Harvard-Data-Science/01-R_Basics.md"
+        - "notes/ai/Harvard-Data-Science/02-Visualization.md"
     # - Others:
     #   - "notes/others/templates.md"
 
