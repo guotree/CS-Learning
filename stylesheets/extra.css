@@ -33,17 +33,6 @@ td, th
     border-bottom: 1px solid #ddd;
 }
 
-.recommend
-{
-    font-weight: bold;
-}
-
-.recommend::before
-{
-    content: "⭐";
-    font-size: 100%;
-}
-
 .finish
 {
     color: green;
@@ -52,5 +41,16 @@ td, th
 .finish::after
 {
     content: "✅";
+    font-size: 100%;
+}
+
+.recommend
+{
+    font-weight: bold;
+}
+
+.recommend::before
+{
+    content: "⭐";
     font-size: 100%;
 }
