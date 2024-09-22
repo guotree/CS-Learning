@@ -28,4 +28,8 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
+      - name: Verify submodules
+        run: |
+          git submodule status
+          ls -R notes/ai/Harvard-Data-Science
       - run: mkdocs gh-deploy --force
