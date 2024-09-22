@@ -42,7 +42,7 @@ nav:
     # - Distributed Systems:
     #   - "notes/distributed-systems/templates.md"
     - Artificial Intelligence:
-      - Harvard Data Science:
+      - Harvard CS109 | HarvardX Data Science:
         - "notes/ai/Harvard-Data-Science/README.md"
         - "notes/ai/Harvard-Data-Science/01-R_Basics.md"
         - "notes/ai/Harvard-Data-Science/02-Visualization.md"
