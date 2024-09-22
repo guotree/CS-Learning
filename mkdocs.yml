@@ -57,8 +57,6 @@ theme:
       toggle:
         icon: material/toggle-switch-off
         name: Switch to system preference
-
-
   features:
     - header.autohide
     - navigation.tracking
@@ -68,6 +66,7 @@ theme:
     - search.highlight
     - content.code.annotate
   language: en
+  custom_dir: overrides
 edit_uri: edit/main/docs
 
 copyright: © 2024 GUOTREE Copyright
