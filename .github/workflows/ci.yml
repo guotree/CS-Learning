@@ -35,5 +35,5 @@ jobs:
       - name: Verify submodules
         run: |
           git submodule status
-          ls -R notes/ai/Harvard-Data-Science
+          ls -R docs/notes/ai/Harvard-Data-Science
       - run: mkdocs gh-deploy --force
