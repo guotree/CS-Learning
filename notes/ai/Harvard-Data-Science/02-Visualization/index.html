@@ -855,7 +855,7 @@
         
   
   <span class="md-ellipsis">
-    Notes for HarvardX Data Science
+    HarvardX Data Science
   </span>
   
 
@@ -1225,16 +1225,22 @@
 </table>
 <h2 id="7-visualizing-data-distributions">7. Visualizing data distributions<a class="headerlink" href="#7-visualizing-data-distributions" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Variable types</strong>: categorical (ordinal or not) and numeric (discrete or continuous)</li>
+<li><strong>Variable types</strong>: categorical (ordinal or not) and numeric (discrete or continuous)<ul>
 <li>discrete numeric data can be considered ordinal</li>
-<li><strong>Distributions</strong>:</li>
+</ul>
+</li>
+<li><strong>Distributions</strong>:<ol>
 <li>empirical cumulative distribution function (eCDF)</li>
 <li>histograms</li>
 <li>smooth density plots: make it easier to compare two distributions</li>
 <li>normal distribution: use mean and standard deviation to describe the distribution.</li>
+</ol>
+</li>
 <li><strong>Boxplots</strong>: provides a five-number summary composed of the range (the minimum and maximum) along with the quartiles (the 25th, 50th, and 75th percentiles)</li>
-<li><strong>stratification</strong>: Dividing observations into groups based on the values of one or more variables associated with those observations.</li>
+<li><strong>stratification</strong>: Dividing observations into groups based on the values of one or more variables associated with those observations.<ul>
 <li>the resulting groups is <em>strata</em>.</li>
+</ul>
+</li>
 <li>quantile: are cutoff points that divide a dataset into intervals with set probabilities <code>quantile(data, q)</code></li>
 <li><code>pnorm(a, avg, s)</code> gives the value of the cumulative distribution function  for the normal distribution defined by average <code>avg</code> and standard deviation <code>s</code>.</li>
 <li>Quantile-quantile plots, or QQ-plots, are used to check whether distributions are well-approximated by a normal distribution.</li>
@@ -1243,22 +1249,26 @@
 <ul>
 <li>benifit: easy for beginners; more intuitive for beginners (it uses a grammar of graphics)</li>
 <li>limitation: work exclusively with data tables in tidy format.</li>
-<li><strong>ggplot2</strong> consists of some components</li>
+<li><strong>ggplot2</strong> consists of some components<ol>
 <li><strong>Data</strong></li>
 <li><strong>Geometry</strong></li>
 <li><strong>Aesthetic mapping</strong></li>
+</ol>
+</li>
 </ul>
 <blockquote>
 <p>DATA |&gt; ggplot() + LAYER 1 + LAYER 2 + … + LAYER N</p>
 </blockquote>
 <ul>
 <li><strong>Packages</strong>: <strong>ggplot2</strong>, <strong>ggthemes</strong>, <strong>ggrepel</strong></li>
-<li>some functions in <strong>ggplot2</strong>:</li>
+<li>some functions in <strong>ggplot2</strong>:<ul>
 <li>barplots: <code>geom_bar</code></li>
 <li>histograms: <code>geo_histogram</code></li>
 <li>density plots: <code>geo_density</code></li>
 <li>boxplots: <code>geo_boxplot</code></li>
 <li>images: <code>geom_tile</code> and <code>geom_raster</code></li>
+</ul>
+</li>
 </ul>
 <p><a href="../asset/data-visualization.pdf">ggplot2 cheatsheet pdf</a>
 <img alt="ggplot2-1" src="../asset/ggplot2-1.png" />
@@ -1303,12 +1313,16 @@
 </span></code></pre></div></td></tr></table></div>
 <h2 id="9-data-visualization-principles">9. Data visualization principles<a class="headerlink" href="#9-data-visualization-principles" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Encoding data using visual cues</strong>: <em>position</em>, <em>aligned lengths</em>, <em>angles</em>, <em>area</em>, <em>brightness</em>, <em>color hue</em></li>
+<li><strong>Encoding data using visual cues</strong>: <em>position</em>, <em>aligned lengths</em>, <em>angles</em>, <em>area</em>, <em>brightness</em>, <em>color hue</em><ul>
 <li>In general, when displaying quantities, position and length are preferred over angles and/or area. Brightness and color are even harder to quantify than angles.</li>
 <li>But they are sometimes useful when more than two dimensions must be displayed at once.</li>
-<li><strong>Know when to include 0</strong></li>
+</ul>
+</li>
+<li><strong>Know when to include 0</strong><ul>
 <li>When using length as a visual cue, it is misinformative not to start the bars at 0.</li>
 <li>When using position rather than length, it is then not necessary to include 0</li>
+</ul>
+</li>
 <li><strong>Do not distort quantities</strong></li>
 <li><strong>Order categories by a meaningful value</strong></li>
 <li><strong>Show the data</strong></li>
@@ -1322,13 +1336,17 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">heights</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_jitter</span><span class="p">(</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>Ease comparisons</strong></li>
+<li><strong>Ease comparisons</strong><ul>
 <li>Use common axes</li>
 <li>Aligning plots for comparisons</li>
-<li><strong>Transformations</strong></li>
+</ul>
+</li>
+<li><strong>Transformations</strong><ul>
 <li>log transformation</li>
 <li>logistic transformation</li>
 <li>square root transformation</li>
+</ul>
+</li>
 <li><strong>Visual cues to be compared should be adjacent</strong></li>
 <li><strong>Think of the color blind</strong></li>
 </ul>
@@ -1343,18 +1361,24 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">p1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color_blind_friendly_cols</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>Plots for two variables</strong></li>
+<li><strong>Plots for two variables</strong><ul>
 <li>Slope charts</li>
 <li>Bland-Altman plot</li>
-<li><strong>Encoding a third variable</strong></li>
+</ul>
+</li>
+<li><strong>Encoding a third variable</strong><ul>
 <li>We encode categorical variables with color and shape.</li>
 <li>For continuous variables, we can use color, intensity, or size.</li>
+</ul>
+</li>
 <li><strong>Avoid pseudo-three-dimensional plots</strong></li>
 <li><strong>Avoid too many significant digits</strong>: <code>options(digits = 3)</code></li>
-<li><strong>Know your audience</strong></li>
+<li><strong>Know your audience</strong><ol>
 <li>for our own exploratory data analysis</li>
 <li>to convey a message to experts</li>
 <li>to help convey a message to a general audience</li>
+</ol>
+</li>
 </ul>
 <h2 id="10-data-visualization-in-practice">10  Data visualization in practice<a class="headerlink" href="#10-data-visualization-in-practice" title="Permanent link">&para;</a></h2>
 <h3 id="case-study-1">Case Study 1<a class="headerlink" href="#case-study-1" title="Permanent link">&para;</a></h3>
