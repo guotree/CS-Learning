@@ -97,9 +97,6 @@ copyright: Copyright &copy; 2024 GUOTREE
 
 extra:
   social:
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/chirui-guo-3ab4a8101
-      name: LinkedIn
     - icon: fontawesome/brands/github
       link: https://github.com/guotree
       name: GitHub
