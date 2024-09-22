@@ -13,10 +13,6 @@ jobs:
         with:
             submodules: 'recursive'
             fetch-depth: 0
-      - name: Initialize and update submodules
-        run: |
-          git submodule init
-          git submodule update --recursive --remote
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
@@ -32,8 +28,4 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
-      - name: Verify submodules
-        run: |
-          git submodule status
-          ls -R docs/notes/ai/Harvard-Data-Science
       - run: mkdocs gh-deploy --force
