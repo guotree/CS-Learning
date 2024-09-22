@@ -45,6 +45,7 @@ nav:
       - Harvard Data Science:
         - "notes/ai/Harvard-Data-Science/README.md"
         - "notes/ai/Harvard-Data-Science/01-R_Basics.md"
+        - "notes/ai/Harvard-Data-Science/02-Visualization.md"
     # - Others:
     #   - "notes/others/templates.md"
 
