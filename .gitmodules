@@ -1,0 +1,3 @@
+[submodule "docs/notes/ai/Harvard-Data-Science"]
+	path = docs/notes/ai/Harvard-Data-Science
+	url = https://github.com/guotree/Harvard-Data-Science.git
