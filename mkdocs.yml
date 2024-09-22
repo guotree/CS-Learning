@@ -50,7 +50,7 @@ nav:
         - "notes/ai/Harvard-Data-Science/04-Inference_and_Modeling.md"
     # - Others:
     #   - "notes/others/templates.md"
-
+  - Links: "links.md" 
 theme:
   icon: 
     logo: material/robot-excited-outline
