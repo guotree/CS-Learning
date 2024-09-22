@@ -1,6 +1,6 @@
 body
 {
-    font-family:Georgia;
+    font-family: Georgia;
 }
 
 h1
@@ -35,7 +35,7 @@ td, th
 
 .finish
 {
-    color: green;
+    color: olivedrab !important;
 }
 
 .finish::after
