@@ -8,29 +8,20 @@ repo_name: CS-Learning
 
 nav:
   - Introduction: "index.md"
-  - Programming:
-    - "Summary": "programming/summary.md"
-    - "Crash Course Notes": "notes/CrashCourseCS.md"
-  - Computer Architecture:
-    - "Summary": "architecture/summary.md"
-  - Algorithms and Data Structures:
-    - "Summary": "algorithms/summary.md"
-  - "Math for CS":
-    - "Summary": "math/summary.md"
-  - "Operating Systems":
-    - "Summary": "operating-systems/summary.md"
-  - "Computer Networking":
-    - "Summary": "networking/summary.md"
-  - "Databases":
-    - "Summary": "databases/summary.md"
-  - "Languages and Compilers":
-    - "Summary": "languages/summary.md"
-  - "Distributed Systems":
-    - "Summary": "distributed-systems/summary.md"
-  - "Artificial Intelligence":
-    - "Summary": "ai/summary.md"
-  - "Others":
-    - "Summary": "others/summary.md"
+  - Resources:
+    - Programming: "resources/programming.md"
+    - Computer Architecture: "resources/architecture.md"
+    - Algorithms and Data Structures: "resources/algorithms.md"
+    - "Math for CS": "resources/math.md"
+    - "Operating Systems": "resources/operating-systems.md"
+    - "Computer Networking": "resources/networking.md"
+    - "Databases": "resources/databases.md"
+    - "Languages and Compilers": "resources/languages.md"
+    - "Distributed Systems": "resources/distributed-systems.md"
+    - "Artificial Intelligence": "resources/ai.md"
+    - "Others": "resources/others.md"
+  - Notes:
+    - "notes/CrashCourseCS.md"
 
 theme:
   icon: 
@@ -62,6 +53,8 @@ theme:
     - navigation.tracking
     - navigation.instant
     - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
     - search.suggest
     - search.highlight
     - content.code.annotate
@@ -69,7 +62,8 @@ theme:
   custom_dir: overrides
 edit_uri: edit/main/docs
 
-copyright: © 2024 GUOTREE Copyright
+copyright: Copyright &copy; 2024 GUOTREE
+
 extra:
   social:
     - icon: fontawesome/brands/linkedin
