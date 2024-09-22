@@ -42,7 +42,9 @@ nav:
     # - Distributed Systems:
     #   - "notes/distributed-systems/templates.md"
     - Artificial Intelligence:
-      - "notes/ai/templates.md"
+      - Harvard Data Science:
+        - "notes/ai/Harvard-Data-Science/README.md"
+        - "notes/ai/Harvard-Data-Science/01-R_Basics.md"
     # - Others:
     #   - "notes/others/templates.md"
 
@@ -81,6 +83,9 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
   language: en
   custom_dir: overrides
 edit_uri: edit/main/docs
@@ -106,22 +111,28 @@ plugins:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
-  - attr_list 
-  - toc:
-      permalink: true
   - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
       linenums: true
       auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.details
+  - toc:  
+      permalink: true
   - meta
   - admonition
-  - pymdownx.details
   - attr_list
   - md_in_html
 
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   
 extra_css:
   - stylesheets/extra.css

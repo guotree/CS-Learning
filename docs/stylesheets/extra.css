@@ -2,6 +2,7 @@ body
 {
     font-family:Georgia;
 }
+
 h1
 {
     font-weight: bolder;
@@ -28,7 +29,6 @@ th
 
 td, th
 {
-    text-align: center;
     vertical-align: middle;
     border-bottom: 1px solid #ddd;
 }
