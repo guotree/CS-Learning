@@ -1,0 +1,1689 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CS-Learning">
+      
+      
+        <meta name="author" content="guotree">
+      
+      
+        <link rel="canonical" href="https://guotree.github.io/notes/ai/Harvard-Data-Science/01-R_Basics/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/robot-excited-outline.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+    
+    
+      
+        <title>R Basics - CS-Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.06209087.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#r-basics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="CS-Learning" class="md-header__button md-logo" aria-label="CS-Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 14h-1c0-3.87-3.13-7-7-7h-1V5.73A2 2 0 1 0 10 4c0 .74.4 1.39 1 1.73V7h-1c-3.87 0-7 3.13-7 7H2c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h1v1a2 2 0 0 0 2 2h14c1.11 0 2-.89 2-2v-1h1c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1m-1 3h-2v3H5v-3H3v-1h2v-2c0-2.76 2.24-5 5-5h4c2.76 0 5 2.24 5 5v2h2zM8.5 13.5l2.36 2.36-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18zm7 0 2.36 2.36-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS-Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              R Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/guotree/CS-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CS-Learning
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../resources/programming/" class="md-tabs__link">
+          
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../intro/CrashCourseCS/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="CS-Learning" class="md-nav__button md-logo" aria-label="CS-Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 14h-1c0-3.87-3.13-7-7-7h-1V5.73A2 2 0 1 0 10 4c0 .74.4 1.39 1 1.73V7h-1c-3.87 0-7 3.13-7 7H2c-.55 0-1 .45-1 1v3c0 .55.45 1 1 1h1v1a2 2 0 0 0 2 2h14c1.11 0 2-.89 2-2v-1h1c.55 0 1-.45 1-1v-3c0-.55-.45-1-1-1m-1 3h-2v3H5v-3H3v-1h2v-2c0-2.76 2.24-5 5-5h4c2.76 0 5 2.24 5 5v2h2zM8.5 13.5l2.36 2.36-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18zm7 0 2.36 2.36-1.18 1.18-1.18-1.18-1.18 1.18-1.18-1.18z"/></svg>
+
+    </a>
+    CS-Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/guotree/CS-Learning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CS-Learning
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/programming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computer Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithms and Data Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Math for CS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/operating-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operating Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computer Networking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Languages and Compilers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/distributed-systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Distributed Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Intro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/CrashCourseCS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computer Science Crash Course
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Artificial Intelligence
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Harvard Data Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Harvard Data Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/notes/ai/Harvard-Data-Science/README.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/notes/ai/Harvard-Data-Science/01-R_Basics.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../docs/notes/ai/Harvard-Data-Science/02-Visualization.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Getting Started
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why R?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-r-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      The R Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      RStudio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-r-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing R Packages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-r-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. R basic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. R basic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-very-basics-of-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Very Basics of R
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-types-in-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types in R
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-of-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      More of Vectors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Plots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-programming-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Programming Basic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-tidyverse" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The tidyverse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-datatable" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. data.table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-importing-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Importing data
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="r-basics">R Basics<a class="headerlink" href="#r-basics" title="Permanent link">&para;</a></h1>
+<p>This course includes 4 sections: </p>
+<ul>
+<li>Section 1: R Basics</li>
+<li>Section 2: Data Wrangling</li>
+<li>Section 3: Programming Basics</li>
+<li>Section 4: Importing Data</li>
+</ul>
+<p>These four sections correspond to the first chapter of the <a href="https://rafalab.dfci.harvard.edu/dsbook-part-1/">first book</a>.</p>
+<p>I will take notes in the order of the book rather than the order of the video.</p>
+<h2 id="1-getting-started">1. Getting Started<a class="headerlink" href="#1-getting-started" title="Permanent link">&para;</a></h2>
+<p>As an undergraduate student taking notes from the online book "Introduction to Data Science - Getting Started with R," here are the key points to consider:</p>
+<h3 id="why-r">Why R?<a class="headerlink" href="#why-r" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Origin</strong>: Developed by statisticians for interactive data analysis, not for general software development like C or Java.</li>
+<li><strong>Interactivity</strong>: Essential for quick data exploration in data science.</li>
+<li><strong>Scripting</strong>: Ability to save work as scripts for record-keeping and reproducibility.</li>
+<li><strong>Differences</strong>: Not conventional like other programming languages; offers unique power in data analysis and visualization.</li>
+<li><strong>Other</strong> Attractive Features of R<ol>
+<li><strong>Free and Open Source</strong>: Accessible to all users.</li>
+<li><strong>Cross-Platform</strong>: Runs on Windows, macOS, UNIX/Linux.</li>
+<li><strong>Seamless Sharing</strong>: Scripts and data objects can be shared across different platforms.</li>
+<li><strong>Active Community</strong>: Large, growing, and supportive with numerous learning resources.</li>
+<li><strong>Extensibility</strong>: Easy to contribute and share new data science methodologies across various disciplines.</li>
+</ol>
+</li>
+</ul>
+<h3 id="the-r-console">The R Console<a class="headerlink" href="#the-r-console" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Function</strong>: Used for interactive data analysis, executing commands as typed.</li>
+<li><strong>Access</strong>: Can be accessed by starting R on a computer.</li>
+</ul>
+<h3 id="rstudio">RStudio<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Role</strong>: Serves as a launching pad for data science projects with an editor, console, and other tools.</li>
+<li><strong>Panes</strong>: Four main panes for different functionalities (code editor, console, environment/history/connections/tutorial, files/plots/packages/help/viewer/presentation).</li>
+<li><strong>Key Bindings</strong>: Keyboard shortcuts for efficient task performance, recommended to memorize for common operations.</li>
+</ul>
+<h3 id="installing-r-packages">Installing R Packages<a class="headerlink" href="#installing-r-packages" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Base R</strong>: Limited functionality; extended by add-ons from developers.</li>
+<li><strong>CRAN and GitHub</strong>: Sources for packages, with hundreds available.</li>
+<li><strong>Installation</strong>: Easy installation from within R or RStudio. <code>install.packages()</code></li>
+<li><strong>Loading Packages</strong>: Use <code>library()</code> to load installed packages into R sessions.</li>
+<li><strong>Dependencies</strong>: Some packages install additional required packages automatically.</li>
+</ul>
+<h2 id="2-r-basic">2. R basic<a class="headerlink" href="#2-r-basic" title="Permanent link">&para;</a></h2>
+<p>Motivating Example: <strong>US Gun Murders</strong>
+you can load the data through <code>data(murders)</code>.</p>
+<h3 id="the-very-basics-of-r">The Very Basics of R<a class="headerlink" href="#the-very-basics-of-r" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Objects</strong>: Storing values for later use with <code>&lt;-</code> for assignment<ul>
+<li>Example: Solving quadratic equations using variables</li>
+</ul>
+</li>
+<li><strong>Workspace</strong>: The environment where objects are stored and can be accessed<ul>
+<li>Viewing workspace variables in RStudio's Environment tab</li>
+<li>Methods to save and load workspaces using <code>save</code>, <code>save.image</code>, and <code>load</code></li>
+</ul>
+</li>
+<li><strong>Prebuilt Functions and Objects</strong><ul>
+<li><strong>Prebuilt Functions</strong><ul>
+<li>Using predefined functions like <code>sqrt</code>, <code>log</code> for calculations</li>
+<li>You can get help by using the <code>help</code> function like this: <code>help("log")</code> or <code>?log</code></li>
+</ul>
+</li>
+<li><strong>Prebuilt Objects</strong><ul>
+<li>You can see all available prebuilt datasets using <code>data()</code> </li>
+<li>mathematical quantities like <code>pi</code> and <code>Inf</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Variable Names</strong> in R:  start with a letter, can’t contain spaces, and avoid conflicts with existing functions or reserved words in the language</li>
+<li><strong>Comment</strong>: comments start with the symbol <code>#</code> </li>
+</ul>
+<h3 id="data-types-in-r">Data Types in R<a class="headerlink" href="#data-types-in-r" title="Permanent link">&para;</a></h3>
+<p>Using <code>class()</code> to identify the type of an object; The function <code>str</code> is useful for finding out more about the structure of an object.</p>
+<ul>
+<li><strong>Data Frames</strong><ul>
+<li>Storing datasets in data frames as tables with observations and variables</li>
+<li>Accessing data frames and their structure using <code>str()</code> and <code>head()</code></li>
+<li>Using <code>$</code> to access variables within a data frame</li>
+<li>Naming and accessing vector entries</li>
+</ul>
+</li>
+<li><strong>Vectors</strong><ul>
+<li>Creating and manipulating vectors with <code>c()</code> and accessing elements</li>
+<li>types: "numeric", "character", "logical", "factor", "integer"</li>
+<li>Numbers default to the numeric class, even if they are whole numbers. To convert to integers, use <code>as.integer()</code> or suffix with <code>L</code> (e.g., <code>1L</code>).</li>
+<li><strong>Factor</strong>: Storing categorical data and ordering levels with <code>factor</code> and <code>reorder</code> (different from character)</li>
+</ul>
+</li>
+<li><strong>Lists</strong><ul>
+<li>Data frames are a special case of <em>lists</em>. Lists are useful because you can store any combination of different types. You can create a list using the <code>list</code> function like this:
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">record</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">,</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">             </span><span class="n">student_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1234</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">             </span><span class="n">grades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span><span class="w"> </span><span class="m">82</span><span class="p">,</span><span class="w"> </span><span class="m">91</span><span class="p">,</span><span class="w"> </span><span class="m">97</span><span class="p">,</span><span class="w"> </span><span class="m">93</span><span class="p">),</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">             </span><span class="n">final_grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">record</span><span class="o">$</span><span class="n">student_id</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#&gt; [1] 1234</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">record</span><span class="p">[[</span><span class="s">&quot;student_id&quot;</span><span class="p">]]</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#&gt; [1] 1234</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>you can extract the components of a list with the accessor <code>$</code> or double square brackets (<code>[[</code>)</li>
+</ul>
+</li>
+<li><strong>Matrices</strong><ul>
+<li>Defining matrices for matrix algebra operations and converting to data frames</li>
+<li>entries in matrices have to be all the same type</li>
+<li>We can define a matrix using the <code>matrix</code> function like:
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">mat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">mat</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1">#&gt;      [,1] [,2] [,3]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1">#&gt; [1,]    1    5    9</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">#&gt; [2,]    2    6   10</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#&gt; [3,]    3    7   11</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#&gt; [4,]    4    8   12</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>We can access elements in the matrix in a similar manner to numpy</li>
+<li>We can convert matrices into data frames using the function <code>as.data.frame</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="more-of-vectors">More of Vectors<a class="headerlink" href="#more-of-vectors" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>names</strong>: 
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">codes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">italy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">380</span><span class="p">,</span><span class="w"> </span><span class="n">canada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">124</span><span class="p">,</span><span class="w"> </span><span class="n">egypt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">818</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">codes</span><span class="w"> </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1">#&gt; italy canada egypt </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#&gt; 380 124 818</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nf">names</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1">#&gt; [1] &quot;italy&quot;  &quot;canada&quot; &quot;egypt&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">#another way to assign name</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">codes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">380</span><span class="p">,</span><span class="w"> </span><span class="m">124</span><span class="p">,</span><span class="w"> </span><span class="m">818</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">country</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;italy&quot;</span><span class="p">,</span><span class="s">&quot;canada&quot;</span><span class="p">,</span><span class="s">&quot;egypt&quot;</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nf">names</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">country</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">codes</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">#&gt;  italy canada  egypt </span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1">#&gt;    380    124    818</span>
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Use <code>seq</code> for creating vectors generates sequance</p>
+</li>
+<li><strong>Subsetting</strong>: We use square brackets to access specific elements of a vector.</li>
+<li><strong>Coercion</strong>: When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error. <code>as.numeric</code>, <code>as.character</code>; a special value called an <code>NA</code> for “not available”</li>
+</ul>
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;canada&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">x</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">#&gt; [1] &quot;1&quot;      &quot;canada&quot; &quot;3&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#&gt; [1] &quot;character&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Sorting and Ordering</strong><ul>
+<li><code>sort</code> return the sorted vector in increasing order.</li>
+<li><code>order</code>  takes a vector as input and returns the vector of indexes that sorts the input vector</li>
+<li><code>rank</code> For any given vector it returns a vector with the rank of the first entry, second entry, etc., of the input vector.</li>
+<li><code>max</code> and <code>min</code> return the value.</li>
+<li><code>which.max</code> and <code>which.min</code> return the index.</li>
+</ul>
+</li>
+<li><strong>Vector arithmetics</strong>:<ul>
+<li>arithmetic operations on vectors occur <em>element-wise</em></li>
+<li>If we have two vectors of the same length, and we sum them in R, they will be added entry by entry as follows:</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[
+\begin{pmatrix}a \\b \\c \\d\end{pmatrix}+\begin{pmatrix}e \\f \\g \\h\end{pmatrix}=\begin{pmatrix}a+e \\b+f \\c+g \\d+h\end{pmatrix}
+\]</div>
+<ul>
+<li>if the vectors don’t match in length,  R has recycled the numbers in the short vector</li>
+<li><strong>Indexing</strong>: <ul>
+<li>we can use logicals to index vectors<ul>
+<li>logical operator: <code>==</code>, <code>!=</code>, <code>&lt;&gt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&amp;</code>, <code>|</code>, <code>!</code>, <code>&amp;&amp;</code>, <code>||</code></li>
+<li><code>&amp;</code>and <code>|</code> are Element-wise Logical operator</li>
+<li><code>&amp;&amp;</code> and <code>||</code> are Vectorized Logical operator</li>
+</ul>
+</li>
+<li>The function <code>which</code> tells us which entries of a logical vector are TRUE</li>
+<li>The function <code>match</code> tells us which indexes of a second vector match each of the entries of a first vector</li>
+<li>If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function <code>%in%</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="basic-plots">Basic Plots<a class="headerlink" href="#basic-plots" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Creating scatterplots with <code>plot</code>, histograms with <code>hist</code>, boxplots with <code>boxplot</code>, and image with <code>image</code></li>
+<li>The function <code>with</code> Evaluate an <strong>R</strong> expression in an environment constructed from data, possibly modifying (a copy of) the original data.</li>
+</ul>
+<h2 id="3-programming-basic">3. Programming Basic<a class="headerlink" href="#3-programming-basic" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Conditional expressions</strong><ul>
+<li>R use if-else statement (like C language) for flow control</li>
+<li><code>ifelse</code>  takes three arguments: a logical and two possible answers. If the logical is <code>TRUE</code>, the value in the second argument is returned and if <code>FALSE</code>, the value in the third argument is returned</li>
+</ul>
+</li>
+<li>
+<p><strong>Defining functions</strong></p>
+<ul>
+<li>In general, functions are objects, so we assign them to variable names with <code>&lt;-</code>. The function <code>function</code> tells R you are about to define a function. The general form of a function definition looks like this:</li>
+</ul>
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">my_function</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">VARIABLE_NAME</span><span class="p">){</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="n">perform</span><span class="w"> </span><span class="n">operations</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">VARIABLE_NAME</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">VALUE</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="n">VALUE</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>namespace</strong>: it is likely that two packages use the same name for two different functions</p>
+<ul>
+<li>R will follow a certain order when searching for a function in these <em>namespaces</em>. You can see the order by typing <code>search</code></li>
+<li>You can force the use of a specific namespace by using double colons (<code>::</code>) like: <code>dplyr::filter</code>, <code>stats::filter</code></li>
+<li>if we want to use a function in a package without loading the entire package, we can use the double colon as well</li>
+<li>If you want to see all the packages that have function called, for example <code>filter</code>, you can use double questions marks: <code>??filter</code></li>
+</ul>
+</li>
+<li><strong>For-loops</strong>: the grammar is also like C language.</li>
+<li><strong>Vectorization and functionals</strong>: <em>vectorization</em> is preferred over for-loops<ul>
+<li><em>Functionals</em> are functions that help us apply the same function to each entry in a vector, matrix, data frame, or list. Here we cover the functional that operates on numeric, logical, and character vectors: <code>sapply</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-the-tidyverse">4. The tidyverse<a class="headerlink" href="#4-the-tidyverse" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Tidy format</strong> permits the data analyst to focus on more important aspects of the analysis rather than the format of the data</li>
+<li>Refining data frame:<ul>
+<li><code>mutate</code>: <strong>adding columns</strong>;  it takes the data frame as a first argument and the name and values of the variable as a second argument using the convention; <strong>transform variables</strong>, apply the same transformation to several variables by <code>across</code></li>
+<li><code>filter</code>: row-wise subsetting; it takes the data frame as the first argument and then a conditional statement as the second</li>
+<li><code>select</code>: column-wise subsetting;  it takes the data frame as a first argument and the column name as the next arguments (or <code>starts_with</code>, <code>where</code>, <code>ends_with</code>, <code>contains</code>, <code>matches</code>, <code>num_range</code>)</li>
+</ul>
+</li>
+<li><strong>Pipe</strong>: perform a series of operations by <code>%&gt;%</code> or <code>|&gt;</code>; the pipe sends the result of the left side of the pipe to be the first argument of the function on the right side of the pipe</li>
+<li>The <code>summarize</code> function in <strong>dplyr</strong> provides a way to compute summary statistics</li>
+<li>A common operation in data exploration is to first split data into groups and then compute summaries for each group <code>group_by</code></li>
+<li>We can extract varialbes with <code>pull</code></li>
+<li>With <code>arrange</code> we get to decide which column to sort by (also for nested sorting)</li>
+<li>The function <code>top_n</code> takes a data frame as it’s first argument, the number of rows to show in the second, and the variable to filter by in the third. if the third argument is left blank, <code>top_n</code> filters by the last column.</li>
+<li><strong>“tibble”</strong>, is a special kind of data frame, we can transform a data frame into a tibble by <code>as_tibble</code><ul>
+<li>Tibbles display better than data frame</li>
+<li>Tibbles can have complex entries (even functions)</li>
+<li>Tibbles can be grouped</li>
+<li>creating tibble;</li>
+</ul>
+</li>
+</ul>
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span>
+<span class="normal"><a href="#__codelineno-5-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">grades_t</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tibble</span><span class="p">(</span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jean&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Yao&quot;</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">                     </span><span class="n">exam_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="m">90</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">                     </span><span class="n">exam_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">90</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">,</span><span class="w"> </span><span class="m">90</span><span class="p">))</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">grades_d</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Jean&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Yao&quot;</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">                     </span><span class="n">exam_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">,</span><span class="w"> </span><span class="m">90</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">                     </span><span class="n">exam_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">90</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">,</span><span class="w"> </span><span class="m">85</span><span class="p">,</span><span class="w"> </span><span class="m">90</span><span class="p">))</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="nf">as_tibble</span><span class="p">(</span><span class="n">grades_d</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="nf">class</span><span class="p">()</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1">#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Placeholder</strong>: if we want to pass it as argument to the right-hand side function that is not the first, we should use placeholder.<ul>
+<li>For <code>|&gt;</code> pipe the placeholder operator is <code>_</code> </li>
+<li>for the <code>%&gt;%</code> pipe the placeholder is <code>.</code></li>
+</ul>
+</li>
+<li><strong>purrr</strong> package:  includes functions similar to <code>sapply</code> but that better interact with other tidyverse functions<ul>
+<li><code>map</code> works very similar to <code>sapply</code> but always, without exception, returns a list</li>
+<li><code>map_dbl</code> always returns a vector of numeric values</li>
+<li><code>map_df</code>, always returns a tibble data frame</li>
+</ul>
+</li>
+<li>
+<p><strong>Tidyverse conditionals</strong>: </p>
+<ul>
+<li>The <code>case_when</code> function is useful for vectorizing conditional statements. It is similar to <code>ifelse</code> but can output any number of values</li>
+</ul>
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">-2</span><span class="p">,</span><span class="w"> </span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nf">case_when</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;Negative&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">          </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;Positive&quot;</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">          </span><span class="kc">TRUE</span><span class="w">  </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;Zero&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">#&gt; [1] &quot;Negative&quot; &quot;Negative&quot; &quot;Zero&quot;     &quot;Positive&quot; &quot;Positive&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><code>between</code> function determines if a value falls inside an interval.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-datatable">5. data.table<a class="headerlink" href="#5-datatable" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>data.table</strong> is more efficient and can handle larger datasets more effectively.</li>
+<li><strong>data.table</strong> is a separate package that needs to be installed: <code>library(data.frame)</code></li>
+<li>
+<p><strong>Refining data tables</strong>:</p>
+<ul>
+<li><code>as.data.table</code> can convert the data frame into a data.table</li>
+<li><strong>Column-wise subsetting</strong>: </li>
+</ul>
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">murders_dt</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;region&quot;</span><span class="p">)]</span><span class="w"> </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">murders_dt</span><span class="p">[,</span><span class="w"> </span><span class="nf">.</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="p">)]</span><span class="w"> </span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Adding or transformin variables</strong>: The <strong>data.table</strong> <code>:=</code> function permits us update the variable by reference</li>
+</ul>
+<div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">murders_dt</span><span class="p">[,</span><span class="w"> </span><span class="n">rate</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">population</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100000</span><span class="p">]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">murders_dt</span><span class="p">[,</span><span class="w"> </span><span class="s">&quot;:=&quot;</span><span class="p">(</span><span class="n">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">population</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100000</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rank</span><span class="p">(</span><span class="n">population</span><span class="p">))]</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>Reference versus copy</strong><ul>
+<li>The <strong>data.table</strong> package is designed to avoid wasting memory: In <code>y &lt;- x</code> , <code>y</code> is referencing <code>x</code>; In <code>y &lt;- copy(x)</code>, <code>y</code> is the actual copy of <code>x</code></li>
+<li>the function <code>as.data.table</code> creates a copy of the data frame being converted. However, if working with a large data frames it is helpful to avoid this by using <code>setDT</code>:</li>
+</ul>
+</li>
+<li><strong>Row-wise subsetting</strong>: <code>murders_dt[rate &lt;= 0.7, .(state, rate)]</code> has the same function as <code>murders |&gt; filter(rate &lt;= 0.7) |&gt; select(state, rate)</code></li>
+<li><strong>Summarizing data</strong>: <code>s &lt;- heights |&gt; summarize(avg = mean(height), sd = sd(height))</code> has the same function as <code>s &lt;- heights_dt[, .(avg = mean(height), sd = sd(height))]</code></li>
+<li>We simply add the <code>by</code> argument to split the data into groups based on the values in categorical variable <code>heights_dt[, .(avg = mean(height), sd = sd(height)), by = sex]</code></li>
+<li><strong>Sorting</strong>: <code>murders_dt[order(population)]</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="6-importing-data">6. Importing data<a class="headerlink" href="#6-importing-data" title="Permanent link">&para;</a></h2>
+<ul>
+<li>highly recommend only using <em>relative paths</em> in your code</li>
+<li><code>getwd</code> get the full path of your working directory; <code>setwd</code> change your working directory; <code>file.path</code> function combines characters to form a complete path; <code>file.copy</code> copy the file with full path; </li>
+<li><strong>File types</strong>: text files and binary files<ul>
+<li>The most common delimiters are comma (<code>,</code>), semicolon (<code>;</code>), space (<code></code>), and tab (a preset number of spaces or <code>\t</code>); </li>
+<li>You can look at any number of lines from within R using the <code>readLines</code> function which can reveal what the file's delimited is.</li>
+<li>R’s <code>readBin</code> function can process any binary file</li>
+<li><strong>Encoding</strong>: ASCII, UTF-8, UTF-16, and UTF-32; RStudio typically uses <strong>UTF-8</strong> as its default</li>
+</ul>
+</li>
+<li><strong>Parsers</strong>: importing functions are most in <strong>readr</strong>, <strong>readxl</strong> and <strong>data.table</strong> packages.<ul>
+<li><strong>Basic R</strong>: <code>read.csv</code>, <code>read.table</code> and <code>read.delim</code>; <code>scan</code> is another flexible function</li>
+<li><strong>readr</strong>: it is part of the <strong>tidyverse</strong>; Its parsers permit us to specify an encoding. It also includes a function <code>guess_encoding</code> that tries to guess the encoding;  we can specify it through the <code>locale</code> argument</li>
+<li><strong>readxl</strong>: provides functions to read-in Microsoft Excel formats; These functions read the first sheet by default; The <code>excel_sheets</code> function gives us the names of all the sheets in an Excel file. These names can then be passed to the <code>sheet</code> argument in these functions.</li>
+<li><strong>data.table</strong>: provides the <code>fread</code> function for large datasets which automatically detects the format of the input (even gzip and zip)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Format</th>
+<th>Typical suffix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read_table</code></td>
+<td>white space separated values</td>
+<td>txt</td>
+</tr>
+<tr>
+<td><code>read_csv</code></td>
+<td>comma separated values</td>
+<td>csv</td>
+</tr>
+<tr>
+<td><code>read_csv2</code></td>
+<td>semicolon separated values</td>
+<td>csv</td>
+</tr>
+<tr>
+<td><code>read_tsv</code></td>
+<td>tab delimited separated values</td>
+<td>tsv</td>
+</tr>
+<tr>
+<td><code>read_delim</code></td>
+<td>general text file format, must define delimiter</td>
+<td>txt</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Format</th>
+<th>Typical suffix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read_excel</td>
+<td>auto detect the format</td>
+<td>xls, xlsx</td>
+</tr>
+<tr>
+<td>read_xls</td>
+<td>original format</td>
+<td>xls</td>
+</tr>
+<tr>
+<td>read_xlsx</td>
+<td>new format</td>
+<td>xlsx</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Downloading files</strong>: Most parsers can read these files on the internet through url directly;<ul>
+<li>you can use the <code>download.file</code> function to have a local copy of the file;</li>
+<li><code>tempdir</code> creates a directory with a random name that is very likely to be unique;</li>
+<li><code>tempfile</code> creates a character string, not a file, that is likely to be a unique filename</li>
+</ul>
+</li>
+<li><strong>Organizing data with spreadsheets</strong>:<ul>
+<li>avoid Microsoft Excel format</li>
+<li><strong>Be Consistent</strong></li>
+<li><strong>Choose Good Names for Things</strong>: don't use space and symbols; stick to letters and numbers</li>
+<li><strong>Write Dates as YYYY-MM-DD</strong></li>
+<li><strong>No Empty Cells</strong></li>
+<li><strong>Put Just One Thing in a Cell</strong></li>
+<li><strong>Make It a Rectangle</strong></li>
+<li><strong>Create a Data Dictionary</strong></li>
+<li><strong>No Calculations in the Raw Data Files</strong></li>
+<li><strong>Do Not Use Font Color or Highlighting as Data</strong></li>
+<li><strong>Make Backups</strong></li>
+<li><strong>Use Data Validation to Avoid Errors</strong></li>
+<li><strong>Save the Data as Text Files</strong></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="guotree/CS-Learning"
+        data-repo-id="R_kgDOMtc1IA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMtc1IM4Cirga"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+</script>
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 GUOTREE
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://linkedin.com/in/chirui-guo-3ab4a8101" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/guotree" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.tracking", "navigation.instant", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
