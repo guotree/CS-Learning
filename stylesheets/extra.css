@@ -1,0 +1,56 @@
+body
+{
+    font-family:Georgia;
+}
+
+h1
+{
+    font-weight: bolder;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table
+{
+    width:100%;
+}
+
+th
+{
+    font-weight: bold;
+}
+
+td, th
+{
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.recommend
+{
+    font-weight: bold;
+}
+
+.recommend::before
+{
+    content: "⭐";
+    font-size: 100%;
+}
+
+.finish
+{
+    color: green;
+}
+
+.finish::after
+{
+    content: "✅";
+    font-size: 100%;
+}
