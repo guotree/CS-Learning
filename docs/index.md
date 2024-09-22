@@ -34,7 +34,7 @@ Your self-learning journey should encompass 11 essential areas:
 
 Before embarking on your self-learning adventure, we recommend starting with an introductory course: 
 <a href="https://www.bilibili.com/video/BV1EW411u7th/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a" target="_blank" class="recommend finish">Crash Course Computer Science</a> by 
-<a href="https://about.me/carrieannephilbin" target="_blank">Carrie Anne</a>. Here is my <a href="notes/CrashCourseCS.md">Notes</a>
+<a href="https://about.me/carrieannephilbin" target="_blank">Carrie Anne</a>. Here is my <a href="notes/intro/CrashCourseCS.md">Notes</a>
 
 This series will provide an excellent foundation for your studies.
 
