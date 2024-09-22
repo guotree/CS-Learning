@@ -84,7 +84,7 @@ plugins:
   - search:
       lang:
         - en
-        - ja
+        - zh
       enable_anchors: true
   - tags
 markdown_extensions:
