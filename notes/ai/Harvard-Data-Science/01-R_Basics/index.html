@@ -1333,14 +1333,12 @@
 <li><strong>Interactivity</strong>: Essential for quick data exploration in data science.</li>
 <li><strong>Scripting</strong>: Ability to save work as scripts for record-keeping and reproducibility.</li>
 <li><strong>Differences</strong>: Not conventional like other programming languages; offers unique power in data analysis and visualization.</li>
-<li><strong>Other</strong> Attractive Features of R<ol>
+<li><strong>Other</strong> Attractive Features of R</li>
 <li><strong>Free and Open Source</strong>: Accessible to all users.</li>
 <li><strong>Cross-Platform</strong>: Runs on Windows, macOS, UNIX/Linux.</li>
 <li><strong>Seamless Sharing</strong>: Scripts and data objects can be shared across different platforms.</li>
 <li><strong>Active Community</strong>: Large, growing, and supportive with numerous learning resources.</li>
 <li><strong>Extensibility</strong>: Easy to contribute and share new data science methodologies across various disciplines.</li>
-</ol>
-</li>
 </ul>
 <h3 id="the-r-console">The R Console<a class="headerlink" href="#the-r-console" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1366,50 +1364,41 @@
 you can load the data through <code>data(murders)</code>.</p>
 <h3 id="the-very-basics-of-r">The Very Basics of R<a class="headerlink" href="#the-very-basics-of-r" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Objects</strong>: Storing values for later use with <code>&lt;-</code> for assignment<ul>
+<li><strong>Objects</strong>: Storing values for later use with <code>&lt;-</code> for assignment</li>
 <li>Example: Solving quadratic equations using variables</li>
-</ul>
-</li>
-<li><strong>Workspace</strong>: The environment where objects are stored and can be accessed<ul>
+<li><strong>Workspace</strong>: The environment where objects are stored and can be accessed</li>
 <li>Viewing workspace variables in RStudio's Environment tab</li>
 <li>Methods to save and load workspaces using <code>save</code>, <code>save.image</code>, and <code>load</code></li>
-</ul>
-</li>
-<li><strong>Prebuilt Functions and Objects</strong><ul>
+<li><strong>Prebuilt Functions and Objects</strong></li>
 <li><strong>Prebuilt Functions</strong><ul>
 <li>Using predefined functions like <code>sqrt</code>, <code>log</code> for calculations</li>
 <li>You can get help by using the <code>help</code> function like this: <code>help("log")</code> or <code>?log</code></li>
 </ul>
 </li>
 <li><strong>Prebuilt Objects</strong><ul>
-<li>You can see all available prebuilt datasets using <code>data()</code> </li>
+<li>You can see all available prebuilt datasets using <code>data()</code></li>
 <li>mathematical quantities like <code>pi</code> and <code>Inf</code></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><strong>Variable Names</strong> in R:  start with a letter, can’t contain spaces, and avoid conflicts with existing functions or reserved words in the language</li>
-<li><strong>Comment</strong>: comments start with the symbol <code>#</code> </li>
+<li><strong>Comment</strong>: comments start with the symbol <code>#</code></li>
 </ul>
 <h3 id="data-types-in-r">Data Types in R<a class="headerlink" href="#data-types-in-r" title="Permanent link">&para;</a></h3>
 <p>Using <code>class()</code> to identify the type of an object; The function <code>str</code> is useful for finding out more about the structure of an object.</p>
 <ul>
-<li><strong>Data Frames</strong><ul>
+<li><strong>Data Frames</strong></li>
 <li>Storing datasets in data frames as tables with observations and variables</li>
 <li>Accessing data frames and their structure using <code>str()</code> and <code>head()</code></li>
 <li>Using <code>$</code> to access variables within a data frame</li>
 <li>Naming and accessing vector entries</li>
-</ul>
-</li>
-<li><strong>Vectors</strong><ul>
+<li><strong>Vectors</strong></li>
 <li>Creating and manipulating vectors with <code>c()</code> and accessing elements</li>
 <li>types: "numeric", "character", "logical", "factor", "integer"</li>
 <li>Numbers default to the numeric class, even if they are whole numbers. To convert to integers, use <code>as.integer()</code> or suffix with <code>L</code> (e.g., <code>1L</code>).</li>
 <li><strong>Factor</strong>: Storing categorical data and ordering levels with <code>factor</code> and <code>reorder</code> (different from character)</li>
+<li><strong>Lists</strong></li>
+<li>Data frames are a special case of <em>lists</em>. Lists are useful because you can store any combination of different types. You can create a list using the <code>list</code> function like this:</li>
 </ul>
-</li>
-<li><strong>Lists</strong><ul>
-<li>Data frames are a special case of <em>lists</em>. Lists are useful because you can store any combination of different types. You can create a list using the <code>list</code> function like this:
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1419,22 +1408,22 @@ you can load the data through <code>data(murders)</code>.</p>
 <span class="normal"><a href="#__codelineno-0-7">7</a></span>
 <span class="normal"><a href="#__codelineno-0-8">8</a></span>
 <span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">record</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;John Doe&quot;</span><span class="p">,</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">             </span><span class="n">student_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1234</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">             </span><span class="n">grades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span><span class="w"> </span><span class="m">82</span><span class="p">,</span><span class="w"> </span><span class="m">91</span><span class="p">,</span><span class="w"> </span><span class="m">97</span><span class="p">,</span><span class="w"> </span><span class="m">93</span><span class="p">),</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">             </span><span class="n">final_grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">               </span><span class="n">student_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1234</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">               </span><span class="n">grades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span><span class="w"> </span><span class="m">82</span><span class="p">,</span><span class="w"> </span><span class="m">91</span><span class="p">,</span><span class="w"> </span><span class="m">97</span><span class="p">,</span><span class="w"> </span><span class="m">93</span><span class="p">),</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">               </span><span class="n">final_grade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">)</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">record</span><span class="o">$</span><span class="n">student_id</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">#&gt; [1] 1234</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">record</span><span class="p">[[</span><span class="s">&quot;student_id&quot;</span><span class="p">]]</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">#&gt; [1] 1234</span>
-</span></code></pre></div></td></tr></table></div></li>
+</span></code></pre></div></td></tr></table></div>
+<ul>
 <li>you can extract the components of a list with the accessor <code>$</code> or double square brackets (<code>[[</code>)</li>
-</ul>
-</li>
-<li><strong>Matrices</strong><ul>
+<li><strong>Matrices</strong></li>
 <li>Defining matrices for matrix algebra operations and converting to data frames</li>
 <li>entries in matrices have to be all the same type</li>
-<li>We can define a matrix using the <code>matrix</code> function like:
+<li>We can define a matrix using the <code>matrix</code> function like:</li>
+</ul>
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -1448,16 +1437,15 @@ you can load the data through <code>data(murders)</code>.</p>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">#&gt; [2,]    2    6   10</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#&gt; [3,]    3    7   11</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1">#&gt; [4,]    4    8   12</span>
-</span></code></pre></div></td></tr></table></div></li>
+</span></code></pre></div></td></tr></table></div>
+<ul>
 <li>We can access elements in the matrix in a similar manner to numpy</li>
 <li>We can convert matrices into data frames using the function <code>as.data.frame</code></li>
 </ul>
-</li>
-</ul>
 <h3 id="more-of-vectors">More of Vectors<a class="headerlink" href="#more-of-vectors" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>names</strong>: 
+<li><strong>names</strong>:</li>
+</ul>
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -1483,11 +1471,9 @@ you can load the data through <code>data(murders)</code>.</p>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">codes</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">#&gt;  italy canada  egypt </span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1">#&gt;    380    124    818</span>
-</span></code></pre></div></td></tr></table></div></p>
-</li>
-<li>
-<p>Use <code>seq</code> for creating vectors generates sequance</p>
-</li>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>Use <code>seq</code> for creating vectors generates sequance</li>
 <li><strong>Subsetting</strong>: We use square brackets to access specific elements of a vector.</li>
 <li><strong>Coercion</strong>: When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error. <code>as.numeric</code>, <code>as.character</code>; a special value called an <code>NA</code> for “not available”</li>
 </ul>
@@ -1502,26 +1488,22 @@ you can load the data through <code>data(murders)</code>.</p>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#&gt; [1] &quot;character&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>Sorting and Ordering</strong><ul>
+<li><strong>Sorting and Ordering</strong></li>
 <li><code>sort</code> return the sorted vector in increasing order.</li>
 <li><code>order</code>  takes a vector as input and returns the vector of indexes that sorts the input vector</li>
 <li><code>rank</code> For any given vector it returns a vector with the rank of the first entry, second entry, etc., of the input vector.</li>
 <li><code>max</code> and <code>min</code> return the value.</li>
 <li><code>which.max</code> and <code>which.min</code> return the index.</li>
-</ul>
-</li>
-<li><strong>Vector arithmetics</strong>:<ul>
+<li><strong>Vector arithmetics</strong>:</li>
 <li>arithmetic operations on vectors occur <em>element-wise</em></li>
 <li>If we have two vectors of the same length, and we sum them in R, they will be added entry by entry as follows:</li>
-</ul>
-</li>
 </ul>
 <div class="arithmatex">\[
 \begin{pmatrix}a \\b \\c \\d\end{pmatrix}+\begin{pmatrix}e \\f \\g \\h\end{pmatrix}=\begin{pmatrix}a+e \\b+f \\c+g \\d+h\end{pmatrix}
 \]</div>
 <ul>
 <li>if the vectors don’t match in length,  R has recycled the numbers in the short vector</li>
-<li><strong>Indexing</strong>: <ul>
+<li><strong>Indexing</strong>:</li>
 <li>we can use logicals to index vectors<ul>
 <li>logical operator: <code>==</code>, <code>!=</code>, <code>&lt;&gt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&amp;</code>, <code>|</code>, <code>!</code>, <code>&amp;&amp;</code>, <code>||</code></li>
 <li><code>&amp;</code>and <code>|</code> are Element-wise Logical operator</li>
@@ -1532,8 +1514,6 @@ you can load the data through <code>data(murders)</code>.</p>
 <li>The function <code>match</code> tells us which indexes of a second vector match each of the entries of a first vector</li>
 <li>If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function <code>%in%</code></li>
 </ul>
-</li>
-</ul>
 <h3 id="basic-plots">Basic Plots<a class="headerlink" href="#basic-plots" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Creating scatterplots with <code>plot</code>, histograms with <code>hist</code>, boxplots with <code>boxplot</code>, and image with <code>image</code></li>
@@ -1541,62 +1521,48 @@ you can load the data through <code>data(murders)</code>.</p>
 </ul>
 <h2 id="3-programming-basic">3. Programming Basic<a class="headerlink" href="#3-programming-basic" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Conditional expressions</strong><ul>
+<li><strong>Conditional expressions</strong></li>
 <li>R use if-else statement (like C language) for flow control</li>
 <li><code>ifelse</code>  takes three arguments: a logical and two possible answers. If the logical is <code>TRUE</code>, the value in the second argument is returned and if <code>FALSE</code>, the value in the third argument is returned</li>
-</ul>
-</li>
-<li>
-<p><strong>Defining functions</strong></p>
-<ul>
+<li><strong>Defining functions</strong></li>
 <li>In general, functions are objects, so we assign them to variable names with <code>&lt;-</code>. The function <code>function</code> tells R you are about to define a function. The general form of a function definition looks like this:</li>
 </ul>
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">my_function</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">VARIABLE_NAME</span><span class="p">){</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="n">perform</span><span class="w"> </span><span class="n">operations</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">VARIABLE_NAME</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">VALUE</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="n">VALUE</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="n">perform</span><span class="w"> </span><span class="n">operations</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">VARIABLE_NAME</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="n">VALUE</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">VALUE</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p><strong>namespace</strong>: it is likely that two packages use the same name for two different functions</p>
 <ul>
+<li><strong>namespace</strong>: it is likely that two packages use the same name for two different functions</li>
 <li>R will follow a certain order when searching for a function in these <em>namespaces</em>. You can see the order by typing <code>search</code></li>
 <li>You can force the use of a specific namespace by using double colons (<code>::</code>) like: <code>dplyr::filter</code>, <code>stats::filter</code></li>
 <li>if we want to use a function in a package without loading the entire package, we can use the double colon as well</li>
 <li>If you want to see all the packages that have function called, for example <code>filter</code>, you can use double questions marks: <code>??filter</code></li>
-</ul>
-</li>
 <li><strong>For-loops</strong>: the grammar is also like C language.</li>
-<li><strong>Vectorization and functionals</strong>: <em>vectorization</em> is preferred over for-loops<ul>
+<li><strong>Vectorization and functionals</strong>: <em>vectorization</em> is preferred over for-loops</li>
 <li><em>Functionals</em> are functions that help us apply the same function to each entry in a vector, matrix, data frame, or list. Here we cover the functional that operates on numeric, logical, and character vectors: <code>sapply</code>.</li>
-</ul>
-</li>
 </ul>
 <h2 id="4-the-tidyverse">4. The tidyverse<a class="headerlink" href="#4-the-tidyverse" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Tidy format</strong> permits the data analyst to focus on more important aspects of the analysis rather than the format of the data</li>
-<li>Refining data frame:<ul>
+<li>Refining data frame:</li>
 <li><code>mutate</code>: <strong>adding columns</strong>;  it takes the data frame as a first argument and the name and values of the variable as a second argument using the convention; <strong>transform variables</strong>, apply the same transformation to several variables by <code>across</code></li>
 <li><code>filter</code>: row-wise subsetting; it takes the data frame as the first argument and then a conditional statement as the second</li>
 <li><code>select</code>: column-wise subsetting;  it takes the data frame as a first argument and the column name as the next arguments (or <code>starts_with</code>, <code>where</code>, <code>ends_with</code>, <code>contains</code>, <code>matches</code>, <code>num_range</code>)</li>
-</ul>
-</li>
 <li><strong>Pipe</strong>: perform a series of operations by <code>%&gt;%</code> or <code>|&gt;</code>; the pipe sends the result of the left side of the pipe to be the first argument of the function on the right side of the pipe</li>
 <li>The <code>summarize</code> function in <strong>dplyr</strong> provides a way to compute summary statistics</li>
 <li>A common operation in data exploration is to first split data into groups and then compute summaries for each group <code>group_by</code></li>
 <li>We can extract varialbes with <code>pull</code></li>
 <li>With <code>arrange</code> we get to decide which column to sort by (also for nested sorting)</li>
 <li>The function <code>top_n</code> takes a data frame as it’s first argument, the number of rows to show in the second, and the variable to filter by in the third. if the third argument is left blank, <code>top_n</code> filters by the last column.</li>
-<li><strong>“tibble”</strong>, is a special kind of data frame, we can transform a data frame into a tibble by <code>as_tibble</code><ul>
+<li><strong>“tibble”</strong>, is a special kind of data frame, we can transform a data frame into a tibble by <code>as_tibble</code></li>
 <li>Tibbles display better than data frame</li>
 <li>Tibbles can have complex entries (even functions)</li>
 <li>Tibbles can be grouped</li>
 <li>creating tibble;</li>
-</ul>
-</li>
 </ul>
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
@@ -1615,20 +1581,14 @@ you can load the data through <code>data(murders)</code>.</p>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c1">#&gt; [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>Placeholder</strong>: if we want to pass it as argument to the right-hand side function that is not the first, we should use placeholder.<ul>
-<li>For <code>|&gt;</code> pipe the placeholder operator is <code>_</code> </li>
+<li><strong>Placeholder</strong>: if we want to pass it as argument to the right-hand side function that is not the first, we should use placeholder.</li>
+<li>For <code>|&gt;</code> pipe the placeholder operator is <code>_</code></li>
 <li>for the <code>%&gt;%</code> pipe the placeholder is <code>.</code></li>
-</ul>
-</li>
-<li><strong>purrr</strong> package:  includes functions similar to <code>sapply</code> but that better interact with other tidyverse functions<ul>
+<li><strong>purrr</strong> package:  includes functions similar to <code>sapply</code> but that better interact with other tidyverse functions</li>
 <li><code>map</code> works very similar to <code>sapply</code> but always, without exception, returns a list</li>
 <li><code>map_dbl</code> always returns a vector of numeric values</li>
 <li><code>map_df</code>, always returns a tibble data frame</li>
-</ul>
-</li>
-<li>
-<p><strong>Tidyverse conditionals</strong>: </p>
-<ul>
+<li><strong>Tidyverse conditionals</strong>:</li>
 <li>The <code>case_when</code> function is useful for vectorizing conditional statements. It is similar to <code>ifelse</code> but can output any number of values</li>
 </ul>
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
@@ -1644,17 +1604,13 @@ you can load the data through <code>data(murders)</code>.</p>
 <ul>
 <li><code>between</code> function determines if a value falls inside an interval.</li>
 </ul>
-</li>
-</ul>
 <h2 id="5-datatable">5. data.table<a class="headerlink" href="#5-datatable" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>data.table</strong> is more efficient and can handle larger datasets more effectively.</li>
 <li><strong>data.table</strong> is a separate package that needs to be installed: <code>library(data.frame)</code></li>
-<li>
-<p><strong>Refining data tables</strong>:</p>
-<ul>
+<li><strong>Refining data tables</strong>:</li>
 <li><code>as.data.table</code> can convert the data frame into a data.table</li>
-<li><strong>Column-wise subsetting</strong>: </li>
+<li><strong>Column-wise subsetting</strong>:</li>
 </ul>
 <div class="language-R highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">murders_dt</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;state&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;region&quot;</span><span class="p">)]</span><span class="w"> </span>
@@ -1678,26 +1634,20 @@ you can load the data through <code>data(murders)</code>.</p>
 <li>We simply add the <code>by</code> argument to split the data into groups based on the values in categorical variable <code>heights_dt[, .(avg = mean(height), sd = sd(height)), by = sex]</code></li>
 <li><strong>Sorting</strong>: <code>murders_dt[order(population)]</code></li>
 </ul>
-</li>
-</ul>
 <h2 id="6-importing-data">6. Importing data<a class="headerlink" href="#6-importing-data" title="Permanent link">&para;</a></h2>
 <ul>
 <li>highly recommend only using <em>relative paths</em> in your code</li>
-<li><code>getwd</code> get the full path of your working directory; <code>setwd</code> change your working directory; <code>file.path</code> function combines characters to form a complete path; <code>file.copy</code> copy the file with full path; </li>
-<li><strong>File types</strong>: text files and binary files<ul>
-<li>The most common delimiters are comma (<code>,</code>), semicolon (<code>;</code>), space (<code></code>), and tab (a preset number of spaces or <code>\t</code>); </li>
+<li><code>getwd</code> get the full path of your working directory; <code>setwd</code> change your working directory; <code>file.path</code> function combines characters to form a complete path; <code>file.copy</code> copy the file with full path;</li>
+<li><strong>File types</strong>: text files and binary files</li>
+<li>The most common delimiters are comma (<code>,</code>), semicolon (<code>;</code>), space (<code></code>), and tab (a preset number of spaces or <code>\t</code>);</li>
 <li>You can look at any number of lines from within R using the <code>readLines</code> function which can reveal what the file's delimited is.</li>
 <li>R’s <code>readBin</code> function can process any binary file</li>
 <li><strong>Encoding</strong>: ASCII, UTF-8, UTF-16, and UTF-32; RStudio typically uses <strong>UTF-8</strong> as its default</li>
-</ul>
-</li>
-<li><strong>Parsers</strong>: importing functions are most in <strong>readr</strong>, <strong>readxl</strong> and <strong>data.table</strong> packages.<ul>
+<li><strong>Parsers</strong>: importing functions are most in <strong>readr</strong>, <strong>readxl</strong> and <strong>data.table</strong> packages.</li>
 <li><strong>Basic R</strong>: <code>read.csv</code>, <code>read.table</code> and <code>read.delim</code>; <code>scan</code> is another flexible function</li>
 <li><strong>readr</strong>: it is part of the <strong>tidyverse</strong>; Its parsers permit us to specify an encoding. It also includes a function <code>guess_encoding</code> that tries to guess the encoding;  we can specify it through the <code>locale</code> argument</li>
 <li><strong>readxl</strong>: provides functions to read-in Microsoft Excel formats; These functions read the first sheet by default; The <code>excel_sheets</code> function gives us the names of all the sheets in an Excel file. These names can then be passed to the <code>sheet</code> argument in these functions.</li>
 <li><strong>data.table</strong>: provides the <code>fread</code> function for large datasets which automatically detects the format of the input (even gzip and zip)</li>
-</ul>
-</li>
 </ul>
 <table>
 <thead>
@@ -1762,13 +1712,11 @@ you can load the data through <code>data(murders)</code>.</p>
 </tbody>
 </table>
 <ul>
-<li><strong>Downloading files</strong>: Most parsers can read these files on the internet through url directly;<ul>
+<li><strong>Downloading files</strong>: Most parsers can read these files on the internet through url directly;</li>
 <li>you can use the <code>download.file</code> function to have a local copy of the file;</li>
 <li><code>tempdir</code> creates a directory with a random name that is very likely to be unique;</li>
 <li><code>tempfile</code> creates a character string, not a file, that is likely to be a unique filename</li>
-</ul>
-</li>
-<li><strong>Organizing data with spreadsheets</strong>:<ul>
+<li><strong>Organizing data with spreadsheets</strong>:</li>
 <li>avoid Microsoft Excel format</li>
 <li><strong>Be Consistent</strong></li>
 <li><strong>Choose Good Names for Things</strong>: don't use space and symbols; stick to letters and numbers</li>
@@ -1782,8 +1730,6 @@ you can load the data through <code>data(murders)</code>.</p>
 <li><strong>Make Backups</strong></li>
 <li><strong>Use Data Validation to Avoid Errors</strong></li>
 <li><strong>Save the Data as Text Files</strong></li>
-</ul>
-</li>
 </ul>
 
 
