@@ -22,7 +22,7 @@ nav:
     - Others: "resources/others.md"
   - Notes:
     - Intro: 
-      - "notes/intro/CrashCourseCS.md"
+      - "notes/intro/CrashCourseCS/CrashCourseCS.md"
     # - Programming: 
     #   - "notes/programming/templates.md"
     # - Computer Architecture: 
