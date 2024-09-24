@@ -1229,6 +1229,7 @@
 <h1 id="probability">Probability<a class="headerlink" href="#probability" title="Permanent link">&para;</a></h1>
 <p>This part discusses concepts of probability, and uses R to demonstrate these concepts.</p>
 <h2 id="1-discrete-probability">1. Discrete probability<a class="headerlink" href="#1-discrete-probability" title="Permanent link">&para;</a></h2>
+<p><strong>The most important thing in this chapter is to learn how to calculate probabilities and use Monte Carlo simulations.</strong></p>
 <p><strong>Event</strong>: refer to things that can happen when something occurs by chance.</p>
 <p><strong>Distribution</strong>: We simply assign a probability to each category. their proportion defines the distribution.</p>
 <p><strong>Monte Carlo</strong></p>
@@ -1262,10 +1263,10 @@
 <p><code>sample</code> selects elements <em>without replacement</em> by default. We can change the <code>replace</code> argument to <code>replace=TRUE</code> for selects elements <em>with replacement</em></p>
 <p><strong>Independent</strong>: two events are independent if the outcome of one does not affect the other</p>
 <p><strong>Multiplication rule</strong>:</p>
-<p>$$
+<div class="arithmatex">\[
 \mbox{Pr}(A \mbox{ and } B) = \mbox{Pr}(A)\mbox{Pr}(B \mid A)
-$$
-<strong>Addition rule</strong>:</p>
+\]</div>
+<p><strong>Addition rule</strong>:</p>
 <div class="arithmatex">\[
 \mbox{Pr}(A \mbox{ or } B) = \mbox{Pr}(A) + \mbox{Pr}(B) - \mbox{Pr}(A \mbox{ and } B)
 \]</div>
