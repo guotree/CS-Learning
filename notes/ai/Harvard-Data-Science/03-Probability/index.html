@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/robot-excited-outline.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
     
     
       
@@ -1034,6 +1034,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-the-big-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Big Short
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Big Short">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equations-calculating-interest-rate-for-1-probability-of-losing-money" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equations: Calculating interest rate for 1% probability of losing money
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1205,6 +1229,30 @@
       3. Random variables
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-big-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Big Short
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Big Short">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equations-calculating-interest-rate-for-1-probability-of-losing-money" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equations: Calculating interest rate for 1% probability of losing money
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1444,6 +1492,28 @@ E(\frac{X_1+X_2+...X_n}{n}) &amp;= n\mu/n =\mu \\
 \end{aligned}
 \]</div>
 <p><strong>Law of large numbers</strong>: the standard error of the average becomes smaller and smaller as sample size grows larger.</p>
+<h2 id="4-the-big-short">4. The Big Short<a class="headerlink" href="#4-the-big-short" title="Permanent link">&para;</a></h2>
+<h3 id="equations-calculating-interest-rate-for-1-probability-of-losing-money">Equations: Calculating interest rate for 1% probability of losing money<a class="headerlink" href="#equations-calculating-interest-rate-for-1-probability-of-losing-money" title="Permanent link">&para;</a></h3>
+<p>We want to calculate the value of <span class="arithmatex">\(x\)</span> for which <span class="arithmatex">\(\mathrm{Pr}(S&lt;0)=0.01\)</span>. The expected value <span class="arithmatex">\(E[S]\)</span> of the sum of <span class="arithmatex">\(n=1000\)</span> loans given our definitions of <span class="arithmatex">\(x\)</span>,  <span class="arithmatex">\(l\)</span> and <span class="arithmatex">\(p\)</span> is:</p>
+<div class="arithmatex">\[
+\mu_S=(lp+x(1-p))* n
+\]</div>
+<p>And the standard error of the sum of <span class="arithmatex">\(n\)</span> loans, <span class="arithmatex">\(\mathrm{SE}[S]\)</span>, is:</p>
+<div class="arithmatex">\[
+\sigma_S=\left\vert x-l \right\vert\sqrt{np(1-p)}
+\]</div>
+<p>Because we know the definition of a Z-score is <span class="arithmatex">\(Z=\dfrac{x-\mu}{\sigma}\)</span>, we know that <span class="arithmatex">\(\mathrm{Pr}(S&lt;0)=\mathrm{Pr}(Z&lt;-\dfrac{\mu}{\sigma})\)</span>. Thus, <span class="arithmatex">\(\mathrm{Pr}(S&lt;0)=0.01\)</span> equals:</p>
+<div class="arithmatex">\[
+\mathrm{Pr}(Z&lt;\frac{-\{lp+x(1-x)\}n}{(x-l)\sqrt{np(1-p)}})
+\]</div>
+<p><code>z&lt;-qnorm(0.01)</code> gives us the value of <span class="arithmatex">\(z\)</span> for which <span class="arithmatex">\(\mathrm{Pr}(Z\leq z)=0.01\)</span>, meaning:</p>
+<div class="arithmatex">\[
+z = \frac{-\{lp+x(1-x)\}n}{(x-l)\sqrt{np(1-p)}}
+\]</div>
+<p>Solving for  gives:</p>
+<div class="arithmatex">\[
+x = -l\frac{np-z\sqrt{np(1-p)}}{n(1-p)+z\sqrt{np(1-p)}}
+\]</div>
 
 
 
