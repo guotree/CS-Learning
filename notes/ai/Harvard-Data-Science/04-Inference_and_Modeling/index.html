@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../../assets/robot-excited-outline.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -944,6 +944,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Inference and Modeling
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -953,6 +964,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-parameters-and-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Parameters and Estimates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Hypothesis testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-driven-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Data-driven models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-hierarchical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Hierarchical Models
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1022,6 +1088,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-parameters-and-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Parameters and Estimates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-hypothesis-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Hypothesis testing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-data-driven-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Data-driven models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-hierarchical-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Hierarchical Models
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1039,6 +1149,38 @@
 
 
 <h1 id="inference-and-modeling">Inference and Modeling<a class="headerlink" href="#inference-and-modeling" title="Permanent link">&para;</a></h1>
+<h2 id="1-parameters-and-estimates">1. Parameters and Estimates<a class="headerlink" href="#1-parameters-and-estimates" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters</strong>: we define <em>parameters</em> to represent unknown parts of our models.</p>
+<h2 id="4-hypothesis-testing">4. Hypothesis testing<a class="headerlink" href="#4-hypothesis-testing" title="Permanent link">&para;</a></h2>
+<p><strong>p_value</strong>: We have observed a random variable X¯=0.52, and the p-value is the answer to the question: How likely is it to see a value this large, when the null hypothesis is true? If the p-value is small enough, we <em>reject the null hypothesis</em> and say that the results are <em>statistically significant</em>. (The p-value is the probability of observing a value as extreme or more extreme than the result given that the null hypothesis is true.)</p>
+<p><strong>Power</strong>: <em>power</em> is the probability of detecting spreads different from 0.</p>
+<h2 id="6-data-driven-models">6. Data-driven models<a class="headerlink" href="#6-data-driven-models" title="Permanent link">&para;</a></h2>
+<p><code>map_df</code> v. s. <code>sapply</code>:</p>
+<p>In R programming, <code>map_df</code> and <code>sapply</code> are both functions used for applying a function to each element of a vector or list, but they have some key differences:</p>
+<ol>
+<li><strong>Output Type</strong>:<ul>
+<li><code>map_df</code> from the purrr package (part of the tidyverse) applies a function to each element of a vector or list and then combines the results into a single data frame. It is specifically designed to work with data frames and tibbles.</li>
+<li><code>sapply</code> applies a function to each element of a vector or list and returns a matrix, a higher-dimensional array, or a list, depending on the input and the nature of the function applied.</li>
+</ul>
+</li>
+<li><strong>Default Data Structure</strong>:<ul>
+<li><code>map_df</code> always returns a data frame (or a tibble, which is a modern version of a data frame).</li>
+<li><code>sapply</code> returns a matrix or an array if possible, otherwise it returns a list.</li>
+</ul>
+</li>
+<li><strong>Performance</strong>:<ul>
+<li><code>map_df</code> is often easier to use with non-standard evaluation and can be more readable when working with data frames.</li>
+<li><code>sapply</code> can be faster in some cases because it is optimized for matrix operations, but it might require more manual handling of the output structure.</li>
+</ul>
+</li>
+<li><strong>Ease of Use</strong>:<ul>
+<li><code>map_df</code> is part of the tidyverse, which promotes a consistent and easy-to-understand syntax for data manipulation.</li>
+<li><code>sapply</code> is a base R function, and while it is very powerful, it might require more effort to handle the output in a tidy data frame format.</li>
+</ul>
+</li>
+</ol>
+<h2 id="8-hierarchical-models">8. Hierarchical Models<a class="headerlink" href="#8-hierarchical-models" title="Permanent link">&para;</a></h2>
+<p>A key difference between the <strong>Bayesian</strong> and the <strong>Frequentist</strong> hierarchical model approach is that, in the latter, we use data to construct priors rather than treat priors as a quantification of prior expert knowledge.</p>
 
 
 
@@ -1159,7 +1301,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["header.autohide", "navigation.tracking", "navigation.instant", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
       
