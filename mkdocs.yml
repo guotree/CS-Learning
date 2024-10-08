@@ -48,6 +48,8 @@ nav:
         - "notes/ai/Harvard-Data-Science/02-Visualization.md"
         - "notes/ai/Harvard-Data-Science/03-Probability.md"
         - "notes/ai/Harvard-Data-Science/04-Inference_and_Modeling.md"
+        - "notes/ai/Harvard-Data-Science/05-Productivity_Tools.md"
+        - "notes/ai/Harvard-Data-Science/06-Wrangling.md"
     # - Others:
     #   - "notes/others/templates.md"
   - Links: "links.md" 
