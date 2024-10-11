@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/robot-excited-outline.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -1037,6 +1037,101 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Regression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-correlation-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      The correlation coefficient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional expectations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-regression-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      The regression line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bivariate-normal-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bivariate normal distribution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#there-are-two-regression-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      There are two regression lines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#least-squares-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Least Squares Estimates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-plots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostic plots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1054,6 +1149,65 @@
 
 
 <h1 id="linear-regression">Linear Regression<a class="headerlink" href="#linear-regression" title="Permanent link">&para;</a></h1>
+<h2 id="1-regression">1. Regression<a class="headerlink" href="#1-regression" title="Permanent link">&para;</a></h2>
+<h3 id="the-correlation-coefficient">The correlation coefficient<a class="headerlink" href="#the-correlation-coefficient" title="Permanent link">&para;</a></h3>
+<p>$$
+\rho=\frac{1}{n}\sum_{i=1}^{n}(\frac{x_i-\mu_x}{\sigma_x})(\frac{y_i-\mu_y}{\sigma_y})
+$$
+<span class="arithmatex">\(\mu_x\)</span>, <span class="arithmatex">\(\mu_y\)</span> are the averages of <span class="arithmatex">\(x_1,x_2,...,x_n\)</span> and <span class="arithmatex">\(y_1,y_2,...,y_n\)</span>, and <span class="arithmatex">\(\sigma_x\)</span> and <span class="arithmatex">\(\sigma_y\)</span> are the standard deviations.</p>
+<p>Standardization shows the degree and direction of deviation of the sample from the mean.</p>
+<div class="language-r highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">S</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">rho</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">rho</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>var</code>, <code>sd</code>, <code>cor</code> use <span class="arithmatex">\(n-1\)</span> as their denominator</p>
+<p><strong>Sample correlation is a random variable</strong></p>
+<p>because the sample correlation is an average of independent draws, the central limit actually applies. Therefore, for large enough <span class="arithmatex">\(N\)</span>, the distribution of <em>sample correlation</em> is approximately normal with expected value <span class="arithmatex">\(\rho\)</span>. The standard deviation, which is somewhat complex to derive, is <span class="arithmatex">\(\sqrt{\frac{1-r^2}{N-2}}\)</span>.</p>
+<p><strong>Correlation is not always a useful summary</strong></p>
+<h3 id="conditional-expectations">Conditional expectations<a class="headerlink" href="#conditional-expectations" title="Permanent link">&para;</a></h3>
+<p>The statistical notation for the conditional expectation is:</p>
+<div class="arithmatex">\[
+E(Y|X=x)
+\]</div>
+<p>However, a challenge when using this approach to estimating conditional expectations is that, for continuous data, we don’t have many data points matching exactly one value in our sample.</p>
+<p>A practical way to improve these estimates of the conditional expectations is to define strata of observations with similar value of x. Stratification followed by <strong>boxplots</strong> lets us see the distribution of each group</p>
+<h3 id="the-regression-line">The regression line<a class="headerlink" href="#the-regression-line" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\left(\frac{\hat{Y}-\mu_Y}{\sigma_Y}\right) = \rho\left(\frac{x-\mu_X}{\sigma_X}\right) \\
+&amp;\hat{Y}=\mu_Y + \rho\left(\frac{x-\mu_X}{\sigma_X}\right)\sigma_Y \\
+&amp;\hat{Y}=b + mx,\ b=\mu_Y - m\mu_X,\ m=\rho\frac{\sigma_Y}{\sigma_X}
+\end{aligned}
+\]</div>
+<p><strong>Regression improves precision</strong>: We use a Monte Carlo simulation</p>
+<p>lower standard error than conditional expectations</p>
+<h3 id="bivariate-normal-distribution">Bivariate normal distribution<a class="headerlink" href="#bivariate-normal-distribution" title="Permanent link">&para;</a></h3>
+<p>A more technical way to define the bivariate normal distribution is the following: if <span class="arithmatex">\(X\)</span> is a normally distributed random variable, <span class="arithmatex">\(Y\)</span> is also a normally distributed random variable, and the conditional distribution of <span class="arithmatex">\(Y\)</span> for any <span class="arithmatex">\(X=x\)</span> is approximately normal, then the pair is approximately bivariate normal.</p>
+<p>if our data is approximately bivariate, then the conditional expectation, the best prediction of <span class="arithmatex">\(Y\)</span> given we know the value of <span class="arithmatex">\(X\)</span>, is given by the regression line.</p>
+<h3 id="there-are-two-regression-lines">There are two regression lines<a class="headerlink" href="#there-are-two-regression-lines" title="Permanent link">&para;</a></h3>
+<p>If we reverse the predict order, this is not determined by computing the inverse function of <span class="arithmatex">\(E(Y|X=x)\)</span>. We need to compute <span class="arithmatex">\(E(X|Y=y)\)</span></p>
+<h3 id="linear-models">Linear models<a class="headerlink" href="#linear-models" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+Y_i=\beta_0+\beta_1 x_i+\varepsilon_i,\ i=1,...N
+\]</div>
+<p>For the interpretability of intercept <span class="arithmatex">\(\beta_0\)</span>, we can rewrite the formula:</p>
+<div class="arithmatex">\[
+Y_i=\beta_0+\beta_1 (x_i - \bar{x})+\varepsilon_i,\ i=1,...N,\ \bar{x}=\frac{1}{N}\sum_{i=1}^{N}x_i
+\]</div>
+<h3 id="least-squares-estimates">Least Squares Estimates<a class="headerlink" href="#least-squares-estimates" title="Permanent link">&para;</a></h3>
+<p>Find <span class="arithmatex">\(\beta_S\)</span> to minimize the distance of the fitted model to the data: residual sum of squares (RSS).</p>
+<div class="arithmatex">\[
+RSS=\sum_{i=1}^{n}\{y_i-(\beta_0+\beta_1x_i)\}^2
+\]</div>
+<p>I <code>R</code> we use <code>lm</code> to fit this model.</p>
+<p>The most common way we use <code>lm</code> is by using the character <code>~</code> to let <code>lm</code> know which is the variable we are predicting (left of <code>~</code>) and which we are using to predict (right of <code>~</code>). The intercept is added automatically to the model that will be fit.</p>
+<p>We can use the function <code>summary</code> to extract more of this information</p>
+<p><strong>LSE are random variables</strong></p>
+<p><strong>Predicted values are random variables</strong></p>
+<h3 id="diagnostic-plots">Diagnostic plots<a class="headerlink" href="#diagnostic-plots" title="Permanent link">&para;</a></h3>
+<p>The function <code>plot</code> applied to an <code>lm</code> object automatically plots six plots, and the argument <code>which</code> let’s you specify which you want to see.</p>
 
 
 
