@@ -12,10 +12,10 @@ Meanwhile, the following guidelines can also serve as your reference.
 
 <blockquote cite="https://teachyourselfcs.com/">
     There are 2 types of software engineer: those who understand computer science well enough to do challenging, 
-    innovative work, and those who just get by because they’re familiar with a few high level tools. 
+    innovative work, and those who just get by because they're familiar with a few high level tools. 
     Both call themselves software engineers, and both tend to earn similar salaries in their early careers. 
     But Type 1 engineers progress toward more fulfilling and well-remunerated work over time, 
-    whether that’s valuable commercial work or breakthrough open-source projects, 
+    whether that's valuable commercial work or breakthrough open-source projects, 
     technical leadership or high-quality individual contributions.
 </blockquote>
 
