@@ -24,24 +24,24 @@ nav:
   - Notes:
     - Intro: 
       - "notes/intro/CrashCourseCS/CrashCourseCS.md"
-    # - Programming: 
-    #   - "notes/programming/templates.md"
-    # - Computer Architecture: 
-    #   - "notes/architecture/templates.md"
-    # - Algorithms and Data Structures: 
-    #   - "notes/algorithms/templates.md"
-    # - Math for CS:
-    #   - "notes/math/templates.md"
-    # - Operating Systems:
-    #   - "notes/operating-systems/templates.md"
-    # - Computer Networking:
-    #   - "notes/networking/templates.md"
-    # - Databases:
-    #   - "notes/databases/templates.md"
-    # - Languages and Compilers:
-    #   - "notes/languages/templates.md"
-    # - Distributed Systems:
-    #   - "notes/distributed-systems/templates.md"
+    - Programming: 
+      - "notes/programming/templates.md"
+    - Computer Architecture: 
+      - "notes/architecture/templates.md"
+    - Algorithms and Data Structures: 
+      - "notes/algorithms/templates.md"
+    - Math for CS:
+      - "notes/math/templates.md"
+    - Operating Systems:
+      - "notes/operating-systems/templates.md"
+    - Computer Networking:
+      - "notes/networking/templates.md"
+    - Databases:
+      - "notes/databases/templates.md"
+    - Languages and Compilers:
+      - "notes/languages/templates.md"
+    - Distributed Systems:
+      - "notes/distributed-systems/templates.md"
     - Artificial Intelligence:
       - Harvard CS109 | HarvardX Data Science:
         - "notes/ai/Harvard-Data-Science/README.md"
@@ -52,8 +52,9 @@ nav:
         - "notes/ai/Harvard-Data-Science/05-Productivity_Tools.md"
         - "notes/ai/Harvard-Data-Science/06-Wrangling.md"
         - "notes/ai/Harvard-Data-Science/07-Linear_Regression.md"
-    # - Others:
-    #   - "notes/others/templates.md"
+      - "notes/ai/templates.md"
+    - Others:
+      - "notes/others/templates.md"
   - Links: "links.md" 
 theme:
   icon: 
@@ -97,7 +98,7 @@ theme:
   custom_dir: overrides
 edit_uri: edit/main/docs
 
-copyright: Copyright &copy; 2024 GUOTREE
+copyright: Copyright &copy; 2026 GUOTREE
 
 extra:
   social:
