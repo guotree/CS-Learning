@@ -1,5 +1,5 @@
 site_name: CS-Learning
-site_url: https://guotree.github.io
+site_url: https://guotree.github.io/CS-Learning/
 site_author: guotree
 site_description: CS-Learning
 
@@ -9,6 +9,7 @@ repo_name: CS-Learning
 nav:
   - Introduction: "index.md"
   - Resources:
+    - Intro: "resources/intro.md"
     - Programming: "resources/programming.md"
     - Computer Architecture: "resources/architecture.md"
     - Algorithms and Data Structures: "resources/algorithms.md"
@@ -109,7 +110,6 @@ plugins:
       lang:
         - en
         - zh
-      enable_anchors: true
   - tags
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -139,7 +139,3 @@ extra_javascript:
   
 extra_css:
   - stylesheets/extra.css
-
-google_analytics: 
-  - 'UA-35232574'
-  - 'auto'

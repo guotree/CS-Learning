@@ -33,9 +33,9 @@ Your self-learning journey should encompass 11 essential areas:
 10. [Artificial Intelligence](resources/ai.md)
 11. [Others](resources/others.md)
 
-Before embarking on your self-learning adventure, we recommend starting with an introductory course: 
+Before embarking on your self-learning adventure, we recommend starting with the introductory course: 
 <a href="https://www.bilibili.com/video/BV1EW411u7th/?share_source=copy_web&vd_source=bf4fe3323c05e39053acae4ea726b03a" target="_blank" class="recommend finish">Crash Course Computer Science</a> by 
-<a href="https://about.me/carrieannephilbin" target="_blank">Carrie Anne</a>. Here is my <a href="notes/intro/CrashCourseCS/CrashCourseCS.md">Notes</a>
+<a href="https://about.me/carrieannephilbin" target="_blank">Carrie Anne</a>. See [Intro](resources/intro.md) for details, and here is my <a href="notes/intro/CrashCourseCS/CrashCourseCS.md">Notes</a>
 
 This series will provide an excellent foundation for your studies.
 
